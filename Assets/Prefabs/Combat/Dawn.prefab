@@ -47,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   unitName: Dawn
   unitLevel: 1
-  damage: 6
-  maxHP: 25
-  currentHP: 25
+  attack: 3
+  defense: 4
+  maxHP: 35
+  currentHP: 35
 --- !u!1001 &2939824831939022750
 PrefabInstance:
   m_ObjectHideFlags: 0
