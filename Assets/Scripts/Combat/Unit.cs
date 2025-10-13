@@ -4,15 +4,17 @@ public class Unit : MonoBehaviour
 {
     public string unitName;
     public int unitLevel;
-
-    public int damage;
+    public int attack;
+    public int specialAttack;
+    public int defense;
+    public int specialDefense;
 
     public int maxHP;
     public int currentHP;
 
-    public bool TakeDamage(int dmg)
+    public bool TakeDamage(int atk, int def)
     {
-        currentHP -= dmg;
+        currentHP -= (atk * 4 - def * 2);
 
         if (currentHP <= 0)
         {

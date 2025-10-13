@@ -50,7 +50,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
         enemyHUD.SetHP(enemyUnit.currentHP);
         dialogueText.text = "You strike " + enemyUnit.unitName;
 
@@ -75,14 +75,32 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        dialogueText.text = enemyUnit.unitName + " Attacks!";
+        bool isDead;
 
-        yield return new WaitForSeconds(1f);
+        int attackChoice = Random.Range(0, 4);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        if (attackChoice != 0) {
+
+
+            dialogueText.text = enemyUnit.unitName + " Attacks!";
+
+            yield return new WaitForSeconds(2f);
+
+            isDead = playerUnit.TakeDamage(enemyUnit.attack, playerUnit.defense);
+        }
+
+        else
+        {
+            dialogueText.text = enemyUnit.unitName + " just straight up kills you.";
+
+
+            yield return new WaitForSeconds(2f);
+
+            isDead = playerUnit.TakeDamage(9999, playerUnit.defense);
+        }
 
         playerHUD.SetHP(playerUnit.currentHP);
-        
+
         if (isDead) 
         {
             state = BattleState.LOST;
@@ -114,7 +132,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(5);
+        playerUnit.Heal(12);
 
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = "You take a bite from an energy bar";
