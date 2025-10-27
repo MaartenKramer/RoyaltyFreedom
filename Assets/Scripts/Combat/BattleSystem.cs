@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+public enum BattleState { START, PLAYERTURN, PLAYERCOMBO, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
@@ -21,11 +21,32 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public BattleState state;
+    public string currentCombo;
 
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+    }
+
+    void Update()
+    {
+        if (state == BattleState.PLAYERCOMBO)
+        {
+            if (Input.GetKeyDown(KeyCode.W)) currentCombo += "W";
+            if (Input.GetKeyDown(KeyCode.A)) currentCombo += "A";
+            if (Input.GetKeyDown(KeyCode.S)) currentCombo += "S";
+            if (Input.GetKeyDown(KeyCode.D)) currentCombo += "D";
+
+            
+            dialogueText.text = currentCombo;
+
+            if (currentCombo.Length == 3)
+            {
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(ComboExecute());
+            }
+        }
     }
 
     IEnumerator SetupBattle()
@@ -158,5 +179,31 @@ public class BattleSystem : MonoBehaviour
             return;
 
         StartCoroutine(PlayerHeal());
+    }
+
+    public void OnComboButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        state = BattleState.PLAYERCOMBO;
+    }
+
+    public IEnumerator ComboExecute()
+    {
+        if (currentCombo == "WAS")
+        {
+            Debug.Log("wow it kinda works boss");
+        }
+
+        else
+        {
+            Debug.Log("sorry boss, no dice");
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        currentCombo = "";
+        StartCoroutine(EnemyTurn());
     }
 }
