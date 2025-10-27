@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1167970257564742329}
@@ -48,7 +48,9 @@ MonoBehaviour:
   unitName: Dawn
   unitLevel: 1
   attack: 3
+  specialAttack: 0
   defense: 4
+  specialDefense: 0
   maxHP: 35
   currentHP: 35
 --- !u!1001 &2939824831939022750
