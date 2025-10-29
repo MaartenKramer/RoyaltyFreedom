@@ -2881,7 +2881,6 @@ GameObject:
   - component: {fileID: 429739674}
   - component: {fileID: 429739673}
   - component: {fileID: 429739672}
-  - component: {fileID: 429739676}
   m_Layer: 5
   m_Name: SceneFadeCanvas
   m_TagString: Untagged
@@ -2965,25 +2964,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 803676097}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1005891799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &429739676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429739671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c2e53068fea1a84fa33dc6d953217f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
 --- !u!1 &431500017
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,7 +8101,8 @@ Transform:
   m_LocalPosition: {x: -8.41429, y: 6.08603, z: -21.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 429739675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005891800
@@ -17463,4 +17451,3 @@ SceneRoots:
   - {fileID: 692015112}
   - {fileID: 1541856043}
   - {fileID: 1005891799}
-  - {fileID: 429739675}
