@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.58898926, y: -388.69995}
+  m_AnchoredPosition: {x: -0.58898926, y: -388.69992}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2732611
@@ -225,7 +225,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7f17aa240fc145b43af5dda6b818d7fd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -435,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 436.911, y: -738.8055}
+  m_AnchoredPosition: {x: 436.911, y: -738.8054}
   m_SizeDelta: {x: 150.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40876377
@@ -3611,7 +3611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 975.81104, y: -738.8055}
+  m_AnchoredPosition: {x: 975.81104, y: -738.8054}
   m_SizeDelta: {x: 150.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126110738
@@ -4290,7 +4290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you fucking fight harold
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e8afb9d7314710408af0e7d9f1f29af, type: 2}
   m_sharedMaterial: {fileID: 7198459166404429599, guid: 7e8afb9d7314710408af0e7d9f1f29af, type: 2}
@@ -6257,7 +6257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.58898926, y: -388.69995}
+  m_AnchoredPosition: {x: -0.58898926, y: -388.69992}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818213039
@@ -6897,7 +6897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 169.81097, y: -738.8055}
+  m_AnchoredPosition: {x: 169.81097, y: -738.8054}
   m_SizeDelta: {x: 150.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915551240
@@ -7588,7 +7588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 706.81104, y: -738.8055}
+  m_AnchoredPosition: {x: 706.81104, y: -738.8054}
   m_SizeDelta: {x: 150.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040732987
@@ -7720,7 +7720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.58898926, y: -388.69995}
+  m_AnchoredPosition: {x: -0.58898926, y: -388.69992}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099476661

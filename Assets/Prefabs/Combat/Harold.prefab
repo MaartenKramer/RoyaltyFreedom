@@ -140,10 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   unitName: Harold
   unitLevel: 2
-  attack: 5
-  specialAttack: 0
+  attack: 4
+  specialAttack: 3
   defense: 2
-  specialDefense: 0
+  specialDefense: 2
   maxHP: 20
   currentHP: 20
 --- !u!1 &6044830471226198980

@@ -48,9 +48,9 @@ MonoBehaviour:
   unitName: Dawn
   unitLevel: 1
   attack: 3
-  specialAttack: 0
-  defense: 4
-  specialDefense: 0
+  specialAttack: 4
+  defense: 3
+  specialDefense: 2
   maxHP: 35
   currentHP: 35
 --- !u!1001 &2939824831939022750

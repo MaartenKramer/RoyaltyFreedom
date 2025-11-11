@@ -73,7 +73,7 @@ public class BattleSystem : MonoBehaviour
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
         enemyHUD.SetHP(enemyUnit.currentHP);
-        dialogueText.text = "You strike " + enemyUnit.unitName;
+        dialogueText.text = "You strike " + enemyUnit.unitName + "!";
 
         if (isDead ) 
         {
@@ -98,28 +98,46 @@ public class BattleSystem : MonoBehaviour
     {
         bool isDead;
 
-        int attackChoice = Random.Range(0, 4);
+        int attackChoice = Random.Range(0, 5);
 
-        if (attackChoice != 0) {
+        if (attackChoice == 1 || attackChoice == 2) {
 
 
-            dialogueText.text = enemyUnit.unitName + " Attacks!";
+            dialogueText.text = enemyUnit.unitName + " Strikes!";
 
             yield return new WaitForSeconds(2f);
 
             isDead = playerUnit.TakeDamage(enemyUnit.attack, playerUnit.defense);
         }
 
+        else if (attackChoice == 3 || attackChoice == 4)
+        {
+
+
+            dialogueText.text = enemyUnit.unitName + " Rams into you!";
+
+            yield return new WaitForSeconds(2f);
+
+            enemyUnit.TakeDamage(2, 2);
+            if (enemyUnit.currentHP < 1)
+            {
+                enemyUnit.currentHP = 1;
+            }
+
+
+            isDead = playerUnit.TakeDamage(enemyUnit.attack + 2, playerUnit.defense);
+        }
+
         else
         {
-            dialogueText.text = enemyUnit.unitName + " just straight up kills you.";
+            dialogueText.text = enemyUnit.unitName + " fumbles his attack.";
 
 
             yield return new WaitForSeconds(2f);
 
-            isDead = playerUnit.TakeDamage(9999, playerUnit.defense);
+            isDead = playerUnit.TakeDamage(1, 0);
         }
-
+        enemyHUD.SetHP(enemyUnit.currentHP);
         playerHUD.SetHP(playerUnit.currentHP);
 
         if (isDead) 
@@ -191,19 +209,89 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator ComboExecute()
     {
-        if (currentCombo == "WAS")
+        if (currentCombo == "WWA")
         {
-            Debug.Log("wow it kinda works boss");
+            bool isDead = enemyUnit.TakeDamage(playerUnit.specialAttack, enemyUnit.specialDefense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            currentCombo = "";
+            dialogueText.text = "You Throw a pushpin at " + enemyUnit.unitName + "!";
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
+        }
+
+        else if (currentCombo == "DDD")
+        {
+            bool isDead = enemyUnit.TakeDamage(playerUnit.specialAttack, enemyUnit.specialDefense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            currentCombo = "";
+            dialogueText.text = "You point a laserpointer in " + enemyUnit.unitName + "'s eyes!";
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
+        }
+
+        else if (currentCombo == "SSS")
+        {
+            bool isDead = enemyUnit.TakeDamage(playerUnit.specialAttack, enemyUnit.specialDefense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            currentCombo = "";
+            dialogueText.text = "You cut " + enemyUnit.unitName + "'s finger with some paper!";
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
         }
 
         else
         {
-            Debug.Log("sorry boss, no dice");
+            currentCombo = "";
+            dialogueText.text = "You fail to realize a combo.";
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(EnemyTurn());
         }
 
-        yield return new WaitForSeconds(2f);
-
-        currentCombo = "";
-        StartCoroutine(EnemyTurn());
     }
 }
