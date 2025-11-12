@@ -146,6 +146,7 @@ MonoBehaviour:
   specialDefense: 2
   maxHP: 20
   currentHP: 20
+  attacks: []
 --- !u!1 &6044830471226198980
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -11,6 +12,9 @@ public class Unit : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
+    
+    
+    public List<Attack> attacks = new List<Attack>();
 
     public bool TakeDamage(int atk, int def)
     {

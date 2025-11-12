@@ -53,6 +53,7 @@ MonoBehaviour:
   specialDefense: 2
   maxHP: 35
   currentHP: 35
+  attacks: []
 --- !u!1001 &2939824831939022750
 PrefabInstance:
   m_ObjectHideFlags: 0
