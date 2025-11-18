@@ -9,14 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/LunTest.unity
+    path: Assets/Scenes/Demo Level/Hub.unity
     guid: 0aac0647d447c134aa940d8e8d7cce02
   - enabled: 1
-    path: Assets/Scenes/HallTestLeft.unity
+    path: Assets/Scenes/Demo Level/LeftHall.unity
     guid: 3f1b5fe03f235924085771692a213f7f
   - enabled: 1
-    path: Assets/Scenes/HallTestRight.unity
+    path: Assets/Scenes/Demo Level/RightHall.unity
     guid: b288e9027db0a104aa939ad8009b5fce
+  - enabled: 1
+    path: Assets/Scenes/Demo Level/ConferenceRooms.unity
+    guid: 030ebeae4e55cc34889a29bfdb9c28cb
+  - enabled: 1
+    path: Assets/Scenes/Demo Level/Closet.unity
+    guid: 530cf5e1708ebe34d9e88676fac04542
+  - enabled: 1
+    path: Assets/Scenes/Demo Level/Toilet.unity
+    guid: 5f9b0263f3409a84ba2d76d05c355436
+  - enabled: 1
+    path: Assets/Scenes/Demo Level/Tutorial.unity
+    guid: 1fff06ad4897f5d429576b583ae05a95
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

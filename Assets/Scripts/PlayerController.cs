@@ -41,10 +41,13 @@ public class PlayerController : MonoBehaviour
         moveInput = new Vector3(moveX, 0, moveZ).normalized * speed;
 
         // animation and character direction logic
+        anim.SetFloat("Vertical", moveZ);
+        anim.SetFloat("Horizontal", moveX);
+
         if (moveX != 0 || moveZ != 0)
         {
-            anim.SetBool("isWalk", true);
-            anim.SetBool("isRun", isRunning);
+            anim.SetBool("IsWalk", true);
+            anim.SetBool("IsRun", isRunning);
 
             if (moveX < 0)
             {
@@ -57,8 +60,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isWalk", false);
-            anim.SetBool("isRun", false);
+            anim.SetBool("IsWalk", false);
+            anim.SetBool("IsRun", false);
         }
     }
     private void FixedUpdate()
