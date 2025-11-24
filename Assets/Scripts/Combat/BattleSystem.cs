@@ -112,12 +112,12 @@ public class BattleSystem : MonoBehaviour
 
         else
         {
-            dialogueText.text = enemyUnit.unitName + " just straight up kills you.";
+            dialogueText.text = enemyUnit.unitName + " fumbles his attack.";
 
 
             yield return new WaitForSeconds(2f);
 
-            isDead = playerUnit.TakeDamage(9999, playerUnit.defense);
+            isDead = playerUnit.TakeDamage(1, playerUnit.defense);
         }
 
         playerHUD.SetHP(playerUnit.currentHP);
@@ -148,6 +148,7 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
+        currentCombo = "";
         dialogueText.text = "Choose an action:";
     }
 
@@ -191,19 +192,111 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator ComboExecute()
     {
-        if (currentCombo == "WAS")
+
+        if (currentCombo == "WWW")
         {
-            Debug.Log("wow it kinda works boss");
+            bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            dialogueText.text = "You throw a pushpin at " + enemyUnit.unitName + "!";
+
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
         }
 
-        else
+        if (currentCombo == "SSS")
         {
-            Debug.Log("sorry boss, no dice");
+            bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            dialogueText.text = "You slice" + enemyUnit.unitName + " with a piece of paper!";
+
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
         }
 
-        yield return new WaitForSeconds(2f);
+        if (currentCombo == "AAA")
+        {
+            bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            dialogueText.text = "You give " + enemyUnit.unitName + " a powerful flick on the forehead!";
 
-        currentCombo = "";
-        StartCoroutine(EnemyTurn());
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
+        }
+
+        if (currentCombo == "DDD")
+        {
+            bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
+            enemyHUD.SetHP(enemyUnit.currentHP);
+            dialogueText.text = "You shine a laserpointer in " + enemyUnit.unitName + "'s eyes!";
+
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+
+                yield return new WaitForSeconds(2f);
+
+                EndBattle();
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+
+                yield return new WaitForSeconds(2f);
+
+                StartCoroutine(EnemyTurn());
+            }
+        }
+
+        {
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(EnemyTurn());
+        }
     }
 }
