@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e9b9a1bae35f1e1498dd2139808072c8
+guid: e463b7f66ad74e24b8a705151f039371
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,12 +95,56 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: istockphoto-1314423801-612x612_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 53
+        width: 219
+        height: 308
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdcdefb3abc26b46bdb755e3be96df5
+      internalID: -605728194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1314423801-612x612_1
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 54
+        width: 218
+        height: 306
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81f5ca0bb87d2c4da484134542b8c12
+      internalID: 75217652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a18608e3867e5d142a49764f26bc113c
     internalID: 0
     vertices: []
     indices: 
@@ -109,7 +153,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      istockphoto-1314423801-612x612_0: -605728194
+      istockphoto-1314423801-612x612_1: 75217652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
