@@ -46,7 +46,7 @@ public class Patrol : MonoBehaviour
     private void P1()
     {
         this.gameObject.transform.position = Point1.transform.position;
-        anim.Play("IdleFront");
+        anim.Play("Idle");
         sprite.flipX = false;
 
         if (timer >= waitTime)
@@ -71,7 +71,7 @@ public class Patrol : MonoBehaviour
     private void P2()
     {
         this.gameObject.transform.position = Point2.transform.position;
-        anim.Play("IdleBack");
+        anim.Play("Idle");
         sprite.flipX = true;
 
         if (timer >= waitTime)
