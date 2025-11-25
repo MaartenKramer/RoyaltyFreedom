@@ -53,7 +53,15 @@ MonoBehaviour:
   specialDefense: 2
   maxHP: 35
   currentHP: 35
-  attacks: []
+  attacks:
+  - {fileID: 11400000, guid: 02b9803e98b563141bc9585cb803c47e, type: 2}
+  - {fileID: 11400000, guid: 10070261f760fee4fb3c52cac133709f, type: 2}
+  - {fileID: 11400000, guid: bffff0589c124fa48a00b3ffdbf17588, type: 2}
+  - {fileID: 11400000, guid: 9c2d988f477f7424baf9251656d36dae, type: 2}
+  - {fileID: 11400000, guid: 24f43f9d692802844a67cd21c03e58e5, type: 2}
+  - {fileID: 11400000, guid: 9d03cb81d287a7d43aafa471a9c32038, type: 2}
+  - {fileID: 11400000, guid: 16388f5e1e63e8648814d30874d8a87e, type: 2}
+  - {fileID: 11400000, guid: b828cc84ee4368c48b758016e6ec98da, type: 2}
 --- !u!1001 &2939824831939022750
 PrefabInstance:
   m_ObjectHideFlags: 0

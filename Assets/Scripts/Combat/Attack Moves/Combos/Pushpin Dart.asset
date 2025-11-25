@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02a396fe962ce1148a42f6d9d8dfc917, type: 3}
-  m_Name: Strike
+  m_Name: Pushpin Dart
   m_EditorClassIdentifier: Assembly-CSharp::Attack
-  attackName: Strike
-  flavorText: Harold is lame
-  damage: 10
+  attackName: Pushpin Dart
+  flavorText: throws a stray pushpin at them
+  damage: 5
+  damageType: 1
+  comboSequence: WWW

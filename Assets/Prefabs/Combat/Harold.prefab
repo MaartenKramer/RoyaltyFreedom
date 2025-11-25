@@ -146,7 +146,9 @@ MonoBehaviour:
   specialDefense: 2
   maxHP: 20
   currentHP: 20
-  attacks: []
+  attacks:
+  - {fileID: 11400000, guid: 5190350863692414289bd9426b1cf0ef, type: 2}
+  - {fileID: 11400000, guid: 402c6d45ed49a7b458ced19c313e2ca0, type: 2}
 --- !u!1 &6044830471226198980
 GameObject:
   m_ObjectHideFlags: 0
