@@ -1358,7 +1358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465413634}
   m_Layer: 0
-  m_Name: 'Test 2: 3D world / 2D models'
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
