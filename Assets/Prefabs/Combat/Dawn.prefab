@@ -51,8 +51,8 @@ MonoBehaviour:
   specialAttack: 4
   defense: 3
   specialDefense: 2
-  maxHP: 35
-  currentHP: 35
+  maxHP: 250
+  currentHP: 250
   attacks:
   - {fileID: 11400000, guid: 02b9803e98b563141bc9585cb803c47e, type: 2}
   - {fileID: 11400000, guid: 10070261f760fee4fb3c52cac133709f, type: 2}

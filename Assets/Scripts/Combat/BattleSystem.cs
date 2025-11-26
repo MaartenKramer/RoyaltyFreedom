@@ -33,12 +33,36 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
-            if (Input.GetKeyDown(KeyCode.W)) currentCombo += "W";
-            if (Input.GetKeyDown(KeyCode.A)) currentCombo += "A";
-            if (Input.GetKeyDown(KeyCode.S)) currentCombo += "S";
-            if (Input.GetKeyDown(KeyCode.D)) currentCombo += "D";
+            bool keyPressed = false;
 
-            
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                currentCombo += "W";
+                keyPressed = true;
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                currentCombo += "A";
+                keyPressed = true;
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                currentCombo += "S";
+                keyPressed = true;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                currentCombo += "D";
+                keyPressed = true;
+            }
+
+            if (keyPressed)
+            {
+                enemyUnit.TakeDamage(1, 1);
+                enemyHUD.SetHP(enemyUnit.currentHP);
+                Debug.Log(enemyUnit.currentHP);
+            }
+
             dialogueText.text = currentCombo;
 
             if (currentCombo.Length == 3)
@@ -71,7 +95,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.attack, enemyUnit.defense);
+        bool isDead = enemyUnit.TakeDamage(1, 0);
         enemyHUD.SetHP(enemyUnit.currentHP);
         dialogueText.text = "You strike " + enemyUnit.unitName + "!";
 
@@ -94,31 +118,33 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-    IEnumerator EnemyTurn()
+IEnumerator EnemyTurn()
+{
+    Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
+
+    dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
+
+    float damageVariety = Random.Range(0.9f, 1.1f);
+    int finalDamage = Mathf.RoundToInt((chosenAttack.damage + enemyUnit.attack) * damageVariety);
+    
+    bool isDead = playerUnit.TakeDamage(finalDamage, playerUnit.defense);
+
+    enemyHUD.SetHP(enemyUnit.currentHP);
+    playerHUD.SetHP(playerUnit.currentHP);
+
+    yield return new WaitForSeconds(2f);
+
+    if (isDead)
     {
-
-        Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
-
-        dialogueText.text = enemyUnit.unitName + " " + chosenAttack.attackName + "!";
-
-        yield return new WaitForSeconds(2f);
-
-        bool isDead = playerUnit.TakeDamage(chosenAttack.damage, playerUnit.defense);
-
-        enemyHUD.SetHP(enemyUnit.currentHP);
-        playerHUD.SetHP(playerUnit.currentHP);
-
-        if (isDead)
-        {
-            state = BattleState.LOST;
-            EndBattle();
-        }
-        else
-        {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
-        }
+        state = BattleState.LOST;
+        EndBattle();
     }
+    else
+    {
+        state = BattleState.PLAYERTURN;
+        PlayerTurn();
+    }
+}
 
     void EndBattle()
     {
@@ -139,7 +165,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(12);
+        playerUnit.Heal(30);
 
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = "You take a bite from an energy bar";
@@ -191,9 +217,12 @@ public class BattleSystem : MonoBehaviour
 
         if (successfulCombo != null)
         {
-            bool isDead = enemyUnit.TakeDamage(playerUnit.specialAttack, enemyUnit.specialDefense);
+            float damageVariety = Random.Range(0.9f, 1.1f);
+            int finalDamage = Mathf.RoundToInt((successfulCombo.damage + playerUnit.specialAttack) * damageVariety);
+
+            bool isDead = enemyUnit.TakeDamage(finalDamage, enemyUnit.specialDefense);
             enemyHUD.SetHP(enemyUnit.currentHP);
-            dialogueText.text = "You " + successfulCombo.attackName + " " + enemyUnit.unitName + "!";
+            dialogueText.text = playerUnit.unitName + " " + successfulCombo.flavorText + "!";
 
             yield return new WaitForSeconds(2f);
 

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02a396fe962ce1148a42f6d9d8dfc917, type: 3}
-  m_Name: Griddy
+  m_Name: Pepper Spray
   m_EditorClassIdentifier: Assembly-CSharp::Attack
-  attackName: Griddy
-  flavorText: does the griddy!
-  damage: 999
-  damageType: 0
+  attackName: Pepper Spray
+  flavorText: empties their pepper spray on you
+  damage: 10
+  damageType: 3
   comboSequence: 

@@ -18,8 +18,10 @@ public class Unit : MonoBehaviour
 
     public bool TakeDamage(int atk, int def)
     {
-        currentHP -= (atk * 4 - def * 2);
+        int damage = atk * 4 - def * 2;
+        if (damage < 0) damage = 0;
 
+        currentHP -= damage;
         if (currentHP <= 0)
         {
             return true;

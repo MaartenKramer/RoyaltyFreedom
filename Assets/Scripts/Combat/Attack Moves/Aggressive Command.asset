@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02a396fe962ce1148a42f6d9d8dfc917, type: 3}
-  m_Name: Griddy
+  m_Name: Aggressive Command
   m_EditorClassIdentifier: Assembly-CSharp::Attack
-  attackName: Griddy
-  flavorText: does the griddy!
-  damage: 999
-  damageType: 0
+  attackName: Aggressive Command
+  flavorText: barks orders at you
+  damage: 5
+  damageType: 1
   comboSequence: 

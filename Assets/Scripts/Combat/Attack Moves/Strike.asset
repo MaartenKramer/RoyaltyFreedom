@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Strike
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   attackName: Strike
-  flavorText: Harold is lame
-  damage: 10
+  flavorText: strikes you meekly
+  damage: 5
+  damageType: 0
+  comboSequence: 
