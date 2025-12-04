@@ -58,7 +58,7 @@ public class BattleSystem : MonoBehaviour
 
             if (keyPressed)
             {
-                enemyUnit.TakeDamage(1, 1);
+                enemyUnit.TakeDamage(4, 1);
                 enemyHUD.SetHP(enemyUnit.currentHP);
                 Debug.Log(enemyUnit.currentHP);
             }
