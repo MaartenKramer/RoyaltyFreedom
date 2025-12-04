@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2732611
@@ -5058,7 +5058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
   playerPrefab: {fileID: 6451220470853802319, guid: ded74e33d595d9f40ac6492f3183fbcc, type: 3}
-  enemyPrefab: {fileID: 2198207907809821635, guid: b4f93e7b8cecca94382bcbc55b9b938f, type: 3}
+  enemyPrefabs:
+  - {fileID: 2198207907809821635, guid: 420a67056b108cd49a4c3c9473702d63, type: 3}
+  - {fileID: 2198207907809821635, guid: b4f93e7b8cecca94382bcbc55b9b938f, type: 3}
   playerBattleStation: {fileID: 1761669906}
   enemyBattleStation: {fileID: 377498386}
   dialogueText: {fileID: 1348813180}
@@ -5066,6 +5068,9 @@ MonoBehaviour:
   enemyHUD: {fileID: 104756868}
   state: 0
   currentCombo: 
+  attackButton: {fileID: 40876377}
+  healButton: {fileID: 1126110738}
+  comboButton: {fileID: 2040732987}
 --- !u!4 &1656995962
 Transform:
   m_ObjectHideFlags: 0
@@ -6257,7 +6262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818213039
@@ -7720,7 +7725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099476661

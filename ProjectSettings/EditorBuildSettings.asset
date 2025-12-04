@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo Level/Tutorial.unity
     guid: 1fff06ad4897f5d429576b583ae05a95
+  - enabled: 1
+    path: Assets/Scenes/LunCombat.unity
+    guid: bfbf1e99ff288ba41813c91c4e956fcc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

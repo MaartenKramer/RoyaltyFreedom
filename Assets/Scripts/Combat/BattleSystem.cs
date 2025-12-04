@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTURN, PLAYERCOMBO, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -23,9 +25,15 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
     public string currentCombo;
 
+    public Button attackButton;
+    public Button healButton;
+    public Button comboButton;
+
+
     void Start()
     {
         state = BattleState.START;
+        UpdateButtons(false);
         StartCoroutine(SetupBattle());
     }
 
@@ -77,10 +85,8 @@ public class BattleSystem : MonoBehaviour
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
-
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        GameObject enemyGO = Instantiate(enemyPrefabs[BattleData.enemyIndex], enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
-
         dialogueText.text = "Office worker " + enemyUnit.unitName + " blocks your path!";
 
         playerHUD.SetHUD(playerUnit);
@@ -99,13 +105,13 @@ public class BattleSystem : MonoBehaviour
         enemyHUD.SetHP(enemyUnit.currentHP);
         dialogueText.text = "You strike " + enemyUnit.unitName + "!";
 
-        if (isDead ) 
+        if (isDead)
         {
             state = BattleState.WON;
 
             yield return new WaitForSeconds(2f);
 
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -118,35 +124,35 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-IEnumerator EnemyTurn()
-{
-    Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
-
-    dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
-
-    float damageVariety = Random.Range(0.9f, 1.1f);
-    int finalDamage = Mathf.RoundToInt((chosenAttack.damage + enemyUnit.attack) * damageVariety);
-    
-    bool isDead = playerUnit.TakeDamage(finalDamage, playerUnit.defense);
-
-    enemyHUD.SetHP(enemyUnit.currentHP);
-    playerHUD.SetHP(playerUnit.currentHP);
-
-    yield return new WaitForSeconds(2f);
-
-    if (isDead)
+    IEnumerator EnemyTurn()
     {
-        state = BattleState.LOST;
-        EndBattle();
-    }
-    else
-    {
-        state = BattleState.PLAYERTURN;
-        PlayerTurn();
-    }
-}
+        Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
 
-    void EndBattle()
+        dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
+
+        float damageVariety = Random.Range(0.9f, 1.1f);
+        int finalDamage = Mathf.RoundToInt((chosenAttack.damage + enemyUnit.attack) * damageVariety);
+
+        bool isDead = playerUnit.TakeDamage(finalDamage, playerUnit.defense);
+
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        playerHUD.SetHP(playerUnit.currentHP);
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            StartCoroutine(EndBattle());
+        }
+        else
+        {
+            state = BattleState.PLAYERTURN;
+            PlayerTurn();
+        }
+    }
+
+    IEnumerator EndBattle()
     {
         if (state == BattleState.WON)
         {
@@ -156,11 +162,29 @@ IEnumerator EnemyTurn()
         {
             dialogueText.text = "You were defeated.";
         }
+
+        yield return new WaitForSeconds(4f);
+
+        if (enemyUnit.unitName == "Harold")
+        {
+            SceneManager.LoadScene("Hub");
+        }
+
+        else if (enemyUnit.unitName == "Seth Garth")
+        {
+            SceneManager.LoadScene("RightHall");
+        }
+
+        else
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
     }
 
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action:";
+        UpdateButtons(true);
     }
 
     IEnumerator PlayerHeal()
@@ -181,7 +205,7 @@ IEnumerator EnemyTurn()
     {
         if (state != BattleState.PLAYERTURN)
             return;
-
+        UpdateButtons(false);
         StartCoroutine(PlayerAttack());
     }
 
@@ -189,7 +213,7 @@ IEnumerator EnemyTurn()
     {
         if (state != BattleState.PLAYERTURN)
             return;
-
+        UpdateButtons(false);
         StartCoroutine(PlayerHeal());
     }
 
@@ -197,7 +221,7 @@ IEnumerator EnemyTurn()
     {
         if (state != BattleState.PLAYERTURN)
             return;
-
+        UpdateButtons(false);
         state = BattleState.PLAYERCOMBO;
     }
 
@@ -229,7 +253,7 @@ IEnumerator EnemyTurn()
             if (isDead)
             {
                 state = BattleState.WON;
-                EndBattle();
+                StartCoroutine(EndBattle());
             }
             else
             {
@@ -241,8 +265,23 @@ IEnumerator EnemyTurn()
         {
             dialogueText.text = "You fail to realize a combo.";
             yield return new WaitForSeconds(2f);
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+
+            if (enemyUnit.currentHP <= 0)
+            {
+                state = BattleState.WON;
+                StartCoroutine(EndBattle());
+            }
+            else
+            {
+                state = BattleState.ENEMYTURN;
+                StartCoroutine(EnemyTurn());
+            }
         }
+    }
+    void UpdateButtons(bool isInteractable)
+    {
+        attackButton.interactable = isInteractable;
+        healButton.interactable = isInteractable;
+        comboButton.interactable = isInteractable;
     }
 }
