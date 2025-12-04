@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e9b9a1bae35f1e1498dd2139808072c8
+guid: 162a4886e88c2c14986641fa6ea0df87
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,67 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_0
+      name: man_head_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 940
-        width: 482
-        height: 295
-      alignment: 9
-      pivot: {x: 0.00796986, y: 0.18384865}
+        x: 253
+        y: 690
+        width: 90
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e54ec6e39ed24f4da330093dabd3763
-      internalID: 1305555359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_1
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 565
-        width: 528
-        height: 297
-      alignment: 9
-      pivot: {x: 0.0041532805, y: 0.18149143}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92dfc9628c941df4d98ed894cc725ded
-      internalID: -735651688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_2
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 216
-        width: 440
-        height: 295
-      alignment: 9
-      pivot: {x: 0.0049104732, y: 0.17933226}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b8960eeef0283141a6bd3f2f834aae8
-      internalID: 1813344107
+      spriteID: 596b147ac55774c4c8c8c89c45463d7d
+      internalID: -853928331
       vertices: []
       indices: 
       edges: []
@@ -166,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9ba5e95fd42c18141ac4d001e391daab
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -176,9 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_0: 1305555359
-      three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_1: -735651688
-      three-security-surveillance-cameras-side-view-isolated-on-white-background-KCTXCN_2: 1813344107
+      man_head_0: -853928331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
