@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02a396fe962ce1148a42f6d9d8dfc917, type: 3}
-  m_Name: Mighty Slap
+  m_Name: Recalculate Health
   m_EditorClassIdentifier: Assembly-CSharp::Attack
-  attackName: Mighty Slap
-  flavorText: gives them the backhand special
-  damage: 10
-  damageType: 0
-  comboSequence: AAD
+  attackName: Recalculate Health
+  flavorText: removes a 10 from the enemy's hp
+  damage: 12
+  damageType: 2
+  comboSequence: DDS

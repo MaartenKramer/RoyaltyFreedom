@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2732611
@@ -484,7 +484,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1656995961}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
+        m_MethodName: OnComboButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: actions
+  m_text: combat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e8afb9d7314710408af0e7d9f1f29af, type: 2}
   m_sharedMaterial: {fileID: 7198459166404429599, guid: 7e8afb9d7314710408af0e7d9f1f29af, type: 2}
@@ -3611,7 +3611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 975.81104, y: -738.8054}
+  m_AnchoredPosition: {x: 708.71, y: -738.8054}
   m_SizeDelta: {x: 150.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126110738
@@ -5058,9 +5058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
   playerPrefab: {fileID: 6451220470853802319, guid: ded74e33d595d9f40ac6492f3183fbcc, type: 3}
-  enemyPrefabs:
-  - {fileID: 2198207907809821635, guid: 420a67056b108cd49a4c3c9473702d63, type: 3}
-  - {fileID: 2198207907809821635, guid: b4f93e7b8cecca94382bcbc55b9b938f, type: 3}
+  enemyPrefab: {fileID: 2198207907809821635, guid: 420a67056b108cd49a4c3c9473702d63, type: 3}
   playerBattleStation: {fileID: 1761669906}
   enemyBattleStation: {fileID: 377498386}
   dialogueText: {fileID: 1348813180}
@@ -5068,9 +5066,6 @@ MonoBehaviour:
   enemyHUD: {fileID: 104756868}
   state: 0
   currentCombo: 
-  attackButton: {fileID: 40876377}
-  healButton: {fileID: 1126110738}
-  comboButton: {fileID: 2040732987}
 --- !u!4 &1656995962
 Transform:
   m_ObjectHideFlags: 0
@@ -6262,7 +6257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818213039
@@ -7575,7 +7570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2040732986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7725,7 +7720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5888672, y: -388.69998}
+  m_AnchoredPosition: {x: -0.5888672, y: -388.69995}
   m_SizeDelta: {x: 66, y: -783.8104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099476661

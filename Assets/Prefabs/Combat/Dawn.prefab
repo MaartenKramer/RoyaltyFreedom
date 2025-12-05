@@ -49,7 +49,7 @@ MonoBehaviour:
   unitLevel: 1
   attack: 3
   specialAttack: 4
-  defense: 3
+  defense: 4
   specialDefense: 2
   maxHP: 250
   currentHP: 250

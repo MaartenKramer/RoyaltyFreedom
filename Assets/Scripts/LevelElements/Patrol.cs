@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Patrol : MonoBehaviour
 {
-    public GameObject Point1;
-    public GameObject Point2;
+    public List<Transform> patrolPoints;
+    public Transform currentPoint;
+    [SerializeField] private int index;
 
     private Animator anim;
 
@@ -11,18 +14,21 @@ public class Patrol : MonoBehaviour
     public float waitTime;
     public float speed;
 
-    private SpriteRenderer sprite;
+    public GameObject moveThis;
 
     public enum State
     {
-        P1, P1ToP2, P2, P2ToP1
+        Patrolling, Idling
     }
-    public State state = State.P1;
+    public State state = State.Idling;
 
     void Start()
     {
-        anim = this.gameObject.GetComponent<Animator>();
-        sprite = this.gameObject.GetComponent<SpriteRenderer>();
+        anim = moveThis.GetComponent<Animator>();
+
+        PickRandomPoint();
+        moveThis.transform.position = currentPoint.position;
+        timer = 0;
     }
 
     void Update()
@@ -36,60 +42,53 @@ public class Patrol : MonoBehaviour
     {
         switch (state)
         {
-            case State.P1: P1(); break;
-            case State.P1ToP2: P1ToP2(); break;
-            case State.P2: P2(); break;
-            case State.P2ToP1: P2ToP1(); break;
+            case State.Idling: Idling(); break;
+            case State.Patrolling: Patrolling(); break;
         }
     }
 
-    private void P1()
+    private void PickRandomPoint()
     {
-        this.gameObject.transform.position = Point1.transform.position;
+        index = Random.Range(0, patrolPoints.Count+1);
+        currentPoint = patrolPoints[index];
+    }
+
+    private void PickNextPoint()
+    {
+        index ++;
+        if (index > patrolPoints.Count)
+        {
+            index = 0;
+            currentPoint = patrolPoints[index];
+        }
+        else
+        {
+            currentPoint = patrolPoints[index];
+        }
+    }
+
+    private void Idling()
+    {
+        moveThis.transform.position = currentPoint.position;
         anim.Play("Idle");
-        sprite.flipX = false;
 
         if (timer >= waitTime)
         {
             timer = 0;
-            state = State.P1ToP2;
+            PickNextPoint();
+            state = State.Patrolling;
         }
     }
 
-    private void P1ToP2()
+    private void Patrolling()
     {
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, Point2.transform.position, speed);
+        moveThis.transform.position = Vector3.MoveTowards(moveThis.transform.position, currentPoint.position, speed);
         anim.Play("Walk");
 
-        if (this.gameObject.transform.position == Point2.transform.position)
+        if (moveThis.transform.position == currentPoint.position)
         {
             timer = 0;
-            state = State.P2;
-        }
-    }
-
-    private void P2()
-    {
-        this.gameObject.transform.position = Point2.transform.position;
-        anim.Play("Idle");
-        sprite.flipX = true;
-
-        if (timer >= waitTime)
-        {
-            timer = 0;
-            state = State.P2ToP1;
-        }
-    }
-
-    private void P2ToP1()
-    {
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, Point1.transform.position, speed);
-        anim.Play("Walk");
-
-        if (this.gameObject.transform.position == Point1.transform.position)
-        {
-            timer = 0;
-            state = State.P1;
+            state = State.Idling;
         }
     }
 }
