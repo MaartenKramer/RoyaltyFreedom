@@ -26,8 +26,8 @@ public class WordsWrittenScreen : MonoBehaviour
     void Start()
     {
         PickRandomGoal();
-
         StartCoroutine(WriteWords());
+        currentWords = 0;
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class WordsWrittenScreen : MonoBehaviour
 
     private IEnumerator WriteWords()
     {
-        wordAddition = Random.Range(minWords, maxWords+1);
+        wordAddition = Random.Range(minWords, maxWords);
 
         currentWords += wordAddition;
 
@@ -70,7 +70,7 @@ public class WordsWrittenScreen : MonoBehaviour
     private void PickNextGoal()
     {
         index++;
-        if (index > goals.Count)
+        if (index > goals.Count-1)
         {
             index = 0;
             wordGoal = goals[index];

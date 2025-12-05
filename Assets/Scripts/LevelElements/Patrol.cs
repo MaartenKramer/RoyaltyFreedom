@@ -49,14 +49,14 @@ public class Patrol : MonoBehaviour
 
     private void PickRandomPoint()
     {
-        index = Random.Range(0, patrolPoints.Count+1);
+        index = Random.Range(0, patrolPoints.Count);
         currentPoint = patrolPoints[index];
     }
 
     private void PickNextPoint()
     {
         index ++;
-        if (index > patrolPoints.Count)
+        if (index > patrolPoints.Count-1)
         {
             index = 0;
             currentPoint = patrolPoints[index];
