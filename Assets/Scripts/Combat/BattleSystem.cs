@@ -29,6 +29,7 @@ public class BattleSystem : MonoBehaviour
     public Button healButton;
     public Button comboButton;
 
+    public GameObject comboDial;
 
     void Start()
     {
@@ -126,6 +127,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
+        comboDial.SetActive(false);
+
         Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
 
         dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
@@ -189,7 +192,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-        playerUnit.Heal(30);
+        playerUnit.Heal(50);
 
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = "You take a bite from an energy bar";
@@ -222,7 +225,9 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
         UpdateButtons(false);
+        comboDial.SetActive(true);
         state = BattleState.PLAYERCOMBO;
+
     }
 
     public IEnumerator ComboExecute()
