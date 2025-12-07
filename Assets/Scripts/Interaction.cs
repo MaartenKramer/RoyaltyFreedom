@@ -42,14 +42,15 @@ public class Interaction : MonoBehaviour
             if (currentObject == "Desk" && interactionCooldown == false)
             {
                 printedItems = 0;
-                //desk.SetActive(false);
+                desk.GetComponent<BoxCollider>().enabled = false;
+
                 deskAudio.Play();
             }
         }
 
         if (printedItems == 5)
         {
-            desk.SetActive(true);
+            desk.GetComponent<BoxCollider>().enabled = true;
         }
     }
 
