@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   unitName: Seth Garth
+  combatIntro: Security Officer Seth blocks your path!
   unitLevel: 4
   attack: 4
   specialAttack: 3

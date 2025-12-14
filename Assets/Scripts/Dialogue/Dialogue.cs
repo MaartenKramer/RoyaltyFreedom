@@ -10,7 +10,6 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
@@ -39,6 +38,7 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
+    //Creates typewriter effect
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray()) 

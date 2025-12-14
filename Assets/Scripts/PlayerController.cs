@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        // stops player animations during dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive())
+        {
+            anim.SetBool("IsWalk", false);
+            anim.SetBool("IsRun", false);
+            return;
+        }
 
         // checks if player is running
         if (Input.GetKey(KeyCode.LeftShift))
@@ -66,6 +73,13 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        // freezes player movement during dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive())
+        {
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+            return;
+        }
+
         if (moveInput.magnitude > 0.1f)
         {
             rb.linearVelocity = new Vector3(moveInput.x, rb.linearVelocity.y, moveInput.z);

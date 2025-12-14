@@ -4,6 +4,7 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public string unitName;
+    public string combatIntro;
     public int unitLevel;
     public int attack;
     public int specialAttack;
