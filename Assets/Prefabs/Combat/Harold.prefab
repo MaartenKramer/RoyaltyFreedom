@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   unitName: Harold
+  combatIntro: Officeworker Harold shuffles in!
   unitLevel: 2
   attack: 4
   specialAttack: 3

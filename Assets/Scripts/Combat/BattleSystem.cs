@@ -88,7 +88,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit = playerGO.GetComponent<Unit>();
         GameObject enemyGO = Instantiate(enemyPrefabs[BattleData.enemyIndex], enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
-        dialogueText.text = "Office worker " + enemyUnit.unitName + " blocks your path!";
+        dialogueText.text = enemyUnit.combatIntro;
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
