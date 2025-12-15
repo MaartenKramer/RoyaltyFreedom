@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   unitName: Printer 335
+  combatIntro: Printer 335 lights up!
   unitLevel: 1
   attack: 2
   specialAttack: 1

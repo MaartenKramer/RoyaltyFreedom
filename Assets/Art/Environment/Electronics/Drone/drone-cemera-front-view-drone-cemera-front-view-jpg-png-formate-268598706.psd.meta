@@ -100,6 +100,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
+  - name: light
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 908
+      y: 55
+      width: 116
+      height: 43
+    spriteID: fb0123bc44eaa114683ceb82bfea387c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 908, y: 55}
+    spritePosition: {x: 399, y: 348}
   - name: right spin
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +134,7 @@ ScriptedImporter:
       y: 4
       width: 213
       height: 43
-    spriteID: fb0123bc44eaa114683ceb82bfea387c
+    spriteID: 7a77e14c584db6d46a607c72d33e2333
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -237,12 +259,22 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: right spin
-    spriteName: right spin
+  - name: light
+    spriteName: light
     isGroup: 0
     parentIndex: -1
     spriteID: fb0123bc44eaa114683ceb82bfea387c
     layerID: 0
+    mosaicPosition: {x: 908, y: 55}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: right spin
+    spriteName: right spin
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7a77e14c584db6d46a607c72d33e2333
+    layerID: -2060825856
     mosaicPosition: {x: 627, y: 4}
     flatten: 0
     isImported: 1
