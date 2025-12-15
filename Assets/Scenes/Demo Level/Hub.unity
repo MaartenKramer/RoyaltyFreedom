@@ -2715,7 +2715,7 @@ Transform:
   m_Children:
   - {fileID: 591178552}
   - {fileID: 133019006}
-  - {fileID: 475361331}
+  - {fileID: 983328558}
   m_Father: {fileID: 465413634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &145098071
@@ -8601,50 +8601,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7421299248011657189, guid: 8c462e419256c2c4fb3f5e12bdabc057, type: 3}
   m_PrefabInstance: {fileID: 466160546}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &475361330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 475361331}
-  - component: {fileID: 475361332}
-  m_Layer: 0
-  m_Name: Progress
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &475361331
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475361330}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 144885467}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &475361332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475361330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9fdbcf4a1b00840ab3b5777e68afd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Progress
 --- !u!1 &477756065
 GameObject:
   m_ObjectHideFlags: 0
@@ -19153,6 +19109,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8313218434961709706, guid: 703c4a3c6ee739d41bced62e587e4f1d, type: 3}
   m_PrefabInstance: {fileID: 691462180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &983328557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983328558}
+  - component: {fileID: 983328559}
+  m_Layer: 0
+  m_Name: Hub Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983328558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983328557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 144885467}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983328559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983328557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d4dce158265f44686eab616ec5bb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HubProgress
+  Harold: {fileID: 1468042028}
 --- !u!1001 &984645921
 PrefabInstance:
   m_ObjectHideFlags: 0

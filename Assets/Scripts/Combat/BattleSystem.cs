@@ -23,13 +23,20 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public BattleState state;
-    public string currentCombo;
 
+    [Header("UI Buttons")]
     public Button attackButton;
     public Button healButton;
     public Button comboButton;
 
+    [Header("Combos")]
+    public string currentCombo;
     public GameObject comboDial;
+    public int dialAttack = 4;
+    public int dialDefense = 1;
+
+    private Animator playerAnim;
+    private Animator enemyAnim;
 
     void Start()
     {
@@ -67,7 +74,7 @@ public class BattleSystem : MonoBehaviour
 
             if (keyPressed)
             {
-                enemyUnit.TakeDamage(4, 1);
+                enemyUnit.TakeDamage(dialAttack, dialDefense);
                 enemyHUD.SetHP(enemyUnit.currentHP);
                 Debug.Log(enemyUnit.currentHP);
             }
@@ -75,7 +82,8 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = currentCombo;
 
             if (currentCombo.Length == 3)
-            {
+            {   
+
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(ComboExecute());
             }
@@ -88,6 +96,8 @@ public class BattleSystem : MonoBehaviour
         playerUnit = playerGO.GetComponent<Unit>();
         GameObject enemyGO = Instantiate(enemyPrefabs[BattleData.enemyIndex], enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+        playerAnim = playerGO.GetComponentInChildren<Animator>();
+        enemyAnim = enemyGO.GetComponentInChildren<Animator>();
         dialogueText.text = enemyUnit.combatIntro;
 
         playerHUD.SetHUD(playerUnit);
@@ -170,6 +180,7 @@ public class BattleSystem : MonoBehaviour
 
         if (enemyUnit.unitName == "Harold")
         {
+            Progress.Instance.flags.Add("Harold_Defeated");
             SceneManager.LoadScene("Hub");
         }
 
@@ -232,6 +243,7 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator ComboExecute()
     {
+        yield return new WaitForSeconds(2f);
         Attack successfulCombo = null;
         foreach (Attack attack in playerUnit.attacks)
         {
