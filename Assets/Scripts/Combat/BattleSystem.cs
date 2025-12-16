@@ -54,21 +54,25 @@ public class BattleSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 currentCombo += "W";
+                playerAnim.Play("dialW");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 currentCombo += "A";
+                playerAnim.Play("dialA");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 currentCombo += "S";
+                playerAnim.Play("dialS");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 currentCombo += "D";
+                playerAnim.Play("dialD");
                 keyPressed = true;
             }
 
@@ -142,6 +146,10 @@ public class BattleSystem : MonoBehaviour
         Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
 
         dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
+
+        enemyAnim.Play("Attack");
+
+        yield return new WaitForSeconds(1f);
 
         float damageVariety = Random.Range(0.9f, 1.1f);
         int finalDamage = Mathf.RoundToInt((chosenAttack.damage + enemyUnit.attack) * damageVariety);
@@ -258,6 +266,10 @@ public class BattleSystem : MonoBehaviour
 
         if (successfulCombo != null)
         {
+            playerAnim.Play("ComboAttack");
+
+            yield return new WaitForSeconds(1f);
+
             float damageVariety = Random.Range(0.9f, 1.1f);
             int finalDamage = Mathf.RoundToInt((successfulCombo.damage + playerUnit.specialAttack) * damageVariety);
 
