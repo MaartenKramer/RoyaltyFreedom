@@ -5143,11 +5143,13 @@ MonoBehaviour:
   playerHUD: {fileID: 1815385068}
   enemyHUD: {fileID: 104756868}
   state: 0
-  currentCombo: 
   attackButton: {fileID: 40876377}
   healButton: {fileID: 1126110738}
   comboButton: {fileID: 2040732987}
+  currentCombo: 
   comboDial: {fileID: 665583241}
+  dialAttack: 4
+  dialDefense: 1
 --- !u!4 &1656995962
 Transform:
   m_ObjectHideFlags: 0
