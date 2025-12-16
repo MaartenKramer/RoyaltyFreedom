@@ -54,25 +54,25 @@ public class BattleSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 currentCombo += "W";
-                playerAnim.Play("dialW");
+                playerAnim.Play("DialW");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 currentCombo += "A";
-                playerAnim.Play("dialA");
+                playerAnim.Play("DialA");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 currentCombo += "S";
-                playerAnim.Play("dialS");
+                playerAnim.Play("DialS");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 currentCombo += "D";
-                playerAnim.Play("dialD");
+                playerAnim.Play("DialD");
                 keyPressed = true;
             }
 
