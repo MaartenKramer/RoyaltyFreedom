@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo Level/TutorialAlt.unity
     guid: 6242c17cc4962244ebe2e1e66663b916
+  - enabled: 1
+    path: Assets/Scenes/Combat Scenes/TutRoomCombat.unity
+    guid: c458d3532d454224b978ed167f3f618c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

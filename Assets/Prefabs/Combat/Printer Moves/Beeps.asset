@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beeps
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   attackName: Beep Boop
-  flavorText: lets out a distressing beep
+  flavorText: lets out a distressed beep
   damage: 0
   damageType: 0
   comboSequence: 

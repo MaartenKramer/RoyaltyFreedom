@@ -10,7 +10,7 @@ public class HubProgress : MonoBehaviour
     {
        if (Progress.Instance.flags.Contains("Harold_Defeated")) {
             Harold.SetActive(false);
-        }
+       }
 
        else
         {

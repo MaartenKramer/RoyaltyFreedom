@@ -49,6 +49,9 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
+            if (currentCombo.Length >= 3)
+                return;
+
             bool keyPressed = false;
 
             if (Input.GetKeyDown(KeyCode.W))
@@ -197,10 +200,18 @@ public class BattleSystem : MonoBehaviour
             SceneManager.LoadScene("RightHall");
         }
 
+        else if (enemyUnit.unitName == "Printer 335")
+        {
+            Progress.Instance.flags.Add("PrinterDies");
+            SceneManager.LoadScene("TutorialAlt");
+        }
+
         else
         {
             SceneManager.LoadScene("Tutorial");
         }
+
+
     }
 
     void PlayerTurn()
