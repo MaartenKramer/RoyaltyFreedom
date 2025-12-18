@@ -2073,9 +2073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialAltProgress
   PrinterCombatField: {fileID: 1121320875}
-  PrinterFire: {fileID: 0}
-  printerAudio: {fileID: 0}
-  printExplodeSound: {fileID: 0}
+  PrinterFire: {fileID: 617945681}
+  printerAudio: {fileID: 1371170915}
+  printExplodeSound: {fileID: 8300000, guid: 98eff8f43f912c94bb7007c5b330acb7, type: 3}
 --- !u!1001 &328862199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4245,7 +4245,7 @@ GameObject:
   - component: {fileID: 617945682}
   - component: {fileID: 617945683}
   m_Layer: 0
-  m_Name: pngimg.com - flame_PNG13233
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
