@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shoot Papers
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   attackName: Shoot Papers
-  flavorText: has an error and shoots out papers
+  flavorText: has an error and shoots out a stack of papers
   damage: 1
   damageType: 3
   comboSequence: 

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Print Papers
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   attackName: Print Papers
-  flavorText: prints some papers saying 'Please refill the magenta ink cartridge.
-    Only 95.99!'
+  flavorText: prints papers saying 'Please refill the ink cartridge. Only 95.99!'
   damage: 0
   damageType: 0
   comboSequence: 
