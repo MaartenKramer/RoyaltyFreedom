@@ -143,10 +143,10 @@ Transform:
   m_Children:
   - {fileID: 995416457380667190}
   - {fileID: 3665818822639134991}
-  - {fileID: 9100163958505163412}
   - {fileID: 8685939419513921064}
   - {fileID: 2270969099404906552}
   - {fileID: 8776675366902370520}
+  - {fileID: 9100163958505163412}
   - {fileID: 7002677749815432470}
   - {fileID: 882915129265298354}
   m_Father: {fileID: 0}
@@ -768,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5509256522487106025, guid: f495394eade72954987f9976c7ec0a15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.32182026
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 5509256522487106025, guid: f495394eade72954987f9976c7ec0a15, type: 3}
       propertyPath: m_LocalRotation.w
