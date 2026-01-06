@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A breach of the behavioural guide leads to a fine of 50 Company Currency.
+  m_text: A breach of The Behavioral Guide means a fine of 50 Company Credit.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I best get to work...
+  m_text: '*Sigh* Guess I better get to it then.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -3337,7 +3337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 76.7}
+  m_AnchoredPosition: {x: 0, y: 117.55}
   m_SizeDelta: {x: 1814.9, y: 235.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &453882855
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOUR LUNCH PRIVILEDGES WILL BE REVOKED!
+  m_text: Lunch privileges? REVOKED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -3409,8 +3409,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3650,7 +3650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOUR PAY WILL BE CUT!
+  m_text: Your pay? DOCKED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -3833,7 +3833,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 5f03579a6af61964e95f5d381fb42be3, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 0
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -2695391892136764199, guid: 5f03579a6af61964e95f5d381fb42be3, type: 2}
@@ -4266,8 +4266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Customization of one's cubible is not allowed under The Company's behavioural
-    guide Act 3, subsection 4, point 45.
+  m_text: Customization of one's cubicle is prohibited under The Company's Behavioral
+    Guide Act 3, Subsection 4, Point 45.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -4856,7 +4856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I don't even know how you managed to do that when all you do is print!
+  m_text: You are not even scraping above 85% efficiency!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -5137,7 +5137,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5341,8 +5341,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Please remove your... kitchen utensil before the end of the hour, or further
-    fines will be given.
+  m_text: Please remove your... kitchen utensil before the next inspection or further
+    disciplinary action will be required.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -6642,7 +6642,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 589d5102099571f4e85de0c406abb556, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
@@ -8285,7 +8285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Goodbye.
+  m_text: You have a productive day now.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -8759,7 +8759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I barely have enough money to make rent this month.
+  m_text: 50 Credits?! How am I supposed to pay my rent like this?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -8937,8 +8937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pay your fine before the end of the day at the manager's secretary, or
-    face an interest rate of 25 CC a day.
+  m_text: Do not let me catch you causing more trouble, understand?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -10329,7 +10328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10615,7 +10614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11056,7 +11055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello employee Dawn Roose,
+  m_text: Miss Roose.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -11650,7 +11649,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12139,7 +12138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oh no
+  m_text: Jerk...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -13028,7 +13027,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14442,7 +14441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good luck!
+  m_text: Good luck, team!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -16289,7 +16288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You guys have the lowest productivity on the floor right now!
+  m_text: You slackers are the lowest performing division on the floor!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -16792,7 +16791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Up until productivity is at the normal rate again of course.
+  m_text: Up until you are reaching your quotas again of course.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -16929,6 +16928,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324330625936145212, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240646984605272938, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
