@@ -278,6 +278,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4772781287126979139, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
+      propertyPath: m_text
+      value: 971
+      objectReference: {fileID: 0}
     - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_Name
       value: Printer2 (2)
@@ -1515,7 +1519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.82521594, b: 0.81960785, a: 1}
+  m_Color: {r: 0.99215686, g: 1, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1992,6 +1996,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6059132153392866108, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
+      propertyPath: m_text
+      value: 720
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2293,7 +2301,7 @@ GameObject:
   - component: {fileID: 295752854}
   - component: {fileID: 295752853}
   m_Layer: 5
-  m_Name: R2
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2315,8 +2323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 117.55}
-  m_SizeDelta: {x: 1814.9, y: 235.1}
+  m_AnchoredPosition: {x: 0, y: 72.88}
+  m_SizeDelta: {x: 1814.9, y: 145.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &295752853
 Animator:
@@ -2395,7 +2403,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2498,11 +2506,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 577919001}
+    m_TransformParent: {fileID: 981810613}
     m_Modifications:
     - target: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -18.73
       objectReference: {fileID: 0}
     - target: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2510,7 +2518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 1.7999992
       objectReference: {fileID: 0}
     - target: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2552,11 +2560,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4772781287126979139, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
+      propertyPath: m_text
+      value: 335
+      objectReference: {fileID: 0}
     - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_Name
       value: Printer 335
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1319333942188854562, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
@@ -2591,13 +2604,13 @@ MonoBehaviour:
   - speaker: Printer 335
     text: ...
   - speaker: Printer 335
-    text: ERROR! An exception has occured in the printing process.
+    text: ERROR! An error has occurred in the printing process.
   - speaker: Dawn
     text: ...What?
   - speaker: Printer 335
     text: Please contact a Company Printing Specialist for further assistance.
   - speaker: Printer
-    text: ERROR! We're sorry, it appears all our Specialists are currently busy.
+    text: ERROR! We're sorry. but it appears all our specialists are currently busy.
   - speaker: Dawn
     text: But I... I need... I don't...
   - speaker: Printer 335
@@ -2629,9 +2642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Printer 335
-    text: Ha-Have a p-p-p... day
+    text: P-P-Paper Processing... offline.
   - speaker: Printer 335
-    text: ERROR! Healthbar depleted
+    text: ERROR! Healthbar depleted.
   requiredFlags:
   - PrinterDies
   blockedByFlags:
@@ -3175,7 +3188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &443926994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3367,6 +3380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 428232667}
   - {fileID: 1875665306}
   - {fileID: 856971992}
   - {fileID: 976100191}
@@ -3374,7 +3388,6 @@ Transform:
   - {fileID: 849848344}
   - {fileID: 987199341}
   - {fileID: 2095944234}
-  - {fileID: 428232667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467175052
@@ -3808,7 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4236,7 +4249,6 @@ Transform:
   - {fileID: 524124335}
   - {fileID: 1330610852}
   - {fileID: 981521873}
-  - {fileID: 140567362}
   - {fileID: 304632158}
   m_Father: {fileID: 849848344}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5129,7 +5141,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6814,7 +6826,8 @@ Transform:
   m_LocalPosition: {x: 8.41429, y: -6.08603, z: 21.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 140567362}
   m_Father: {fileID: 465413634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987199340
@@ -7473,7 +7486,7 @@ Transform:
   m_GameObject: {fileID: 1043011275}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 12.28, y: 6.34, z: 0}
+  m_LocalPosition: {x: 12.28, y: 6.34, z: -20.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8101,13 +8114,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4772781287126979139, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
+      propertyPath: m_text
+      value: 001
+      objectReference: {fileID: 0}
     - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_Name
       value: Printer2 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8306,6 +8319,10 @@ PrefabInstance:
     - target: {fileID: 1519435287397361020, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059132153392866108, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
+      propertyPath: m_text
+      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9906,6 +9923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: LeftHallAlt
   exitPointID: LeftHallTutAlt
+  autoTransition: 0
 --- !u!65 &1451813387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9942,7 +9960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1467501198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11345,7 +11363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1653053427
 Transform:
   m_ObjectHideFlags: 0
@@ -12122,6 +12140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6059132153392866108, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
+      propertyPath: m_text
+      value: 691
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12369,9 +12391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2b3ddfee75e9841883afc62ed67b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueBox: {fileID: 184779398}
-  speakerNameText: {fileID: 1030183253}
-  textComponent: {fileID: 1144493995}
+  dialogueBox: {fileID: 1467501197}
+  speakerNameText: {fileID: 645914401}
+  textComponent: {fileID: 295752854}
   textSpeed: 0.02
 --- !u!1 &1791431191
 GameObject:
@@ -12467,8 +12489,8 @@ MonoBehaviour:
 
     - Print 5 pages
 
-    - Give the pages to Employee
-    79 at the fourth desk on the first row'
+    - Give the pages to your
+    coworker at the fourth desk on the first row'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -13450,6 +13472,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6059132153392866108, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
+      propertyPath: m_text
+      value: 448
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13725,6 +13751,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6059132153392866108, guid: 332db4d046a93f9469acf4bb504586d2, type: 3}
+      propertyPath: m_text
+      value: 090
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13834,6 +13864,10 @@ PrefabInstance:
     - target: {fileID: 1093483432182513944, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772781287126979139, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
+      propertyPath: m_text
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_Name

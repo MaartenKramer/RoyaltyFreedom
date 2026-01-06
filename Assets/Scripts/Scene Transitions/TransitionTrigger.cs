@@ -5,6 +5,7 @@ public class TransitionTrigger : MonoBehaviour
     public string sceneToLoad;
     public string exitPointID;
 
+    public bool autoTransition;
     private bool inRange;
 
     //Sends relevant data to scene fader
@@ -27,6 +28,11 @@ public class TransitionTrigger : MonoBehaviour
     void Update()
     {
         if (inRange && Input.GetKeyDown(KeyCode.E) && SceneFader.Instance != null)
+        {
+            SceneFader.Instance.TransitionToScene(sceneToLoad, exitPointID);
+        }
+
+        if (inRange && autoTransition && SceneFader.Instance != null)
         {
             SceneFader.Instance.TransitionToScene(sceneToLoad, exitPointID);
         }

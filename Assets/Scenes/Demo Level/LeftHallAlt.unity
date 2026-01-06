@@ -1219,6 +1219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Toilet
   exitPointID: Toilet
+  autoTransition: 0
 --- !u!65 &417889045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1865,6 +1866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Hub
   exitPointID: Caf
+  autoTransition: 0
 --- !u!65 &561509682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3177,6 +3179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Hub
   exitPointID: HubLeft
+  autoTransition: 0
 --- !u!65 &1006625537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4473,6 +4476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: ClosetCutscene
   exitPointID: ClosetAlt
+  autoTransition: 0
 --- !u!65 &1451813387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6334,6 +6338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: TutorialAlt
   exitPointID: TutorialAlt
+  autoTransition: 0
 --- !u!65 &2004119436
 BoxCollider:
   m_ObjectHideFlags: 0
