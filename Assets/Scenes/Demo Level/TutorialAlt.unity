@@ -2575,6 +2575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3ac6e8bf1cb06408a06ccdae364977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialAltProgress
+  Printer: {fileID: 1371170912}
   PrinterCombatField: {fileID: 1121320875}
   PrinterFire: {fileID: 617945681}
   printerAudio: {fileID: 1371170915}
@@ -2645,7 +2646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       propertyPath: m_Name
-      value: Printer 335
+      value: Printer 335(Object)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1319333942188854562, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
@@ -2655,6 +2656,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 617945682}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 328862205}
     - targetCorrespondingSourceObject: {fileID: 6152494848247060936, guid: 2d72160c4d4272944857c8c28e46f36a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 328862201}
@@ -2731,6 +2735,27 @@ MonoBehaviour:
   flagsToSet:
   - PrinterDead
   autoTrigger: 1
+--- !u!65 &328862205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328862200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.392285, y: 4.465838, z: 0.1674926}
+  m_Center: {x: 0.016253045, y: 2.0699291, z: -0.00000050727357}
 --- !u!1 &339087414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,15 +6030,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837799358}
+  - component: {fileID: 837799361}
   - component: {fileID: 837799359}
   - component: {fileID: 837799360}
   m_Layer: 0
-  m_Name: Desk
+  m_Name: Desk (Interactable)
   m_TagString: Desk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &837799358
 Transform:
   m_ObjectHideFlags: 0
@@ -6147,6 +6173,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &837799361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837799357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac1d22cf8b9fb34a8386f06a77236f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeskInteraction
+  printerInteraction: {fileID: 1371170916}
 --- !u!1 &849848343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,7 +6445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913823676}
   m_Layer: 0
-  m_Name: Temp Quest
+  m_Name: Print Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7538,45 +7577,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703c4a3c6ee739d41bced62e587e4f1d, type: 3}
---- !u!1 &1065729646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5324330625936145212, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
-  m_PrefabInstance: {fileID: 1280534916}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1065729650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065729646}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7bdca24ecf9b1342b3527b432450ad9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  printer: {fileID: 1371170912}
-  desk: {fileID: 837799357}
-  printedItems: 0
-  printerAudio: {fileID: 1371170915}
-  deskAudio: {fileID: 837799360}
---- !u!114 &1065729651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065729646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22a05da590694784f9bd0791d7b44fce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionAlt
-  printer: {fileID: 1371170912}
-  printedItems: 0
-  printerAudio: {fileID: 1371170915}
-  printSound: {fileID: 8300000, guid: 274cfe0716d8c8a4ab09e876e66041a5, type: 3}
-  printBrokenSound: {fileID: 8300000, guid: 7d7b7afbfc8b520438f440b448df9f5a, type: 3}
 --- !u!1 &1071086724
 GameObject:
   m_ObjectHideFlags: 0
@@ -8687,13 +8687,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5324330625936145212, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1065729650}
-    - targetCorrespondingSourceObject: {fileID: 5324330625936145212, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1065729651}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8081e146676e7264a9e4d892a5b5024f, type: 3}
 --- !u!1 &1292144743
 GameObject:
@@ -9413,10 +9407,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371170914}
+  - component: {fileID: 1371170916}
   - component: {fileID: 1371170913}
   - component: {fileID: 1371170915}
   m_Layer: 0
-  m_Name: Printer
+  m_Name: Printer 335 (Interactable)
   m_TagString: Printer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9555,6 +9550,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1371170916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371170912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8981d0adab0ce91409fe2de7dd04fab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrinterInteraction
+  desk: {fileID: 837799357}
+  printerAudio: {fileID: 1371170915}
+  deskAudio: {fileID: 837799360}
+  printSound: {fileID: 8300000, guid: 274cfe0716d8c8a4ab09e876e66041a5, type: 3}
+  printBrokenSound: {fileID: 8300000, guid: 7d7b7afbfc8b520438f440b448df9f5a, type: 3}
+  deskRequirement: 5
+  printCooldown: 2.8
 --- !u!4 &1372062147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8313218434961709706, guid: 703c4a3c6ee739d41bced62e587e4f1d, type: 3}
