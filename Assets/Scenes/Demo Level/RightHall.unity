@@ -1161,6 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Toilet
   exitPointID: Toilet
+  autoTransition: 0
 --- !u!65 &417889045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1837,6 +1838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Hub
   exitPointID: Man
+  autoTransition: 0
 --- !u!65 &561509682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2205,7 +2207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c8a9b485bd490c4d8f67a2b1c80629e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41711f4f114ca2f459a06d5eca020db3, type: 3}
   m_Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2589,7 +2591,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c8a9b485bd490c4d8f67a2b1c80629e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41711f4f114ca2f459a06d5eca020db3, type: 3}
   m_Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3181,6 +3183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Hub
   exitPointID: HubLeft
+  autoTransition: 0
 --- !u!65 &1006625537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4917,7 +4920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c8a9b485bd490c4d8f67a2b1c80629e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41711f4f114ca2f459a06d5eca020db3, type: 3}
   m_Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5668,6 +5671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionTrigger
   sceneToLoad: Hub
   exitPointID: HubRight
+  autoTransition: 0
 --- !u!65 &2004119436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5788,7 +5792,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c8a9b485bd490c4d8f67a2b1c80629e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41711f4f114ca2f459a06d5eca020db3, type: 3}
   m_Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
   m_FlipX: 0
   m_FlipY: 0
