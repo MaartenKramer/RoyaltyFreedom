@@ -1,6 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class CombatDialogueTrigger
+{
+    [Tooltip("Which turn number this triggers on. Set to -1 to trigger ANY time the state happens.")]
+    public int turnNumber = -1;
+
+    [Tooltip("Which phase of combat this triggers in")]
+    public BattleState triggerState;
+
+    [Tooltip("The dialogue to show")]
+    public DialogueLine[] dialogue;
+
+    [HideInInspector]
+    public bool hasTriggered = false;
+}
+
 public class Unit : MonoBehaviour
 {
     public string unitName;
@@ -17,6 +33,8 @@ public class Unit : MonoBehaviour
     public DamageType resistantType;
 
     public List<Attack> attacks = new List<Attack>();
+
+    public CombatDialogueTrigger[] combatDialogue;
 
     public bool TakeDamage(int atk, int def)
     {

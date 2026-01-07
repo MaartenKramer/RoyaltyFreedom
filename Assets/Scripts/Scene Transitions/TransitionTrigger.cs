@@ -8,12 +8,15 @@ public class TransitionTrigger : MonoBehaviour
     public bool autoTransition;
     private bool inRange;
 
+    public GameObject interactionBubble;
+
     //Sends relevant data to scene fader
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             inRange = true;
+            interactionBubble.SetActive(true);
         }
     }
 
@@ -22,6 +25,7 @@ public class TransitionTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            interactionBubble.SetActive(false);
         }
     }
 

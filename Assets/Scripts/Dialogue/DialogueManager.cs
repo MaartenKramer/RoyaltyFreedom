@@ -18,10 +18,15 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI textComponent;
     public float textSpeed = 0.05f;
-
     private DialogueLine[] lines;
     private int index;
     private Action onDialogueComplete;
+
+    [Header("Audio")]
+    public AudioSource typeAudioSource;
+    public AudioClip typeSound;
+
+    private bool isTyping = false;
 
     void Awake()
     {
@@ -39,14 +44,15 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
         {
-            if (textComponent.text == lines[index].text)
-            {
-                NextLine();
-            }
-            else
+            if (isTyping)
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index].text;
+                isTyping = false;
+            }
+            else if (textComponent.text == lines[index].text)
+            {
+                NextLine();
             }
         }
     }
@@ -82,11 +88,19 @@ public class DialogueManager : MonoBehaviour
     // types out dialogue in typewriter effect
     IEnumerator TypeLine()
     {
+        isTyping = true;
+
         foreach (char c in lines[index].text.ToCharArray())
         {
             textComponent.text += c;
+            if (typeAudioSource != null && typeSound != null)
+            {
+                typeAudioSource.PlayOneShot(typeSound);
+            }
             yield return new WaitForSeconds(textSpeed);
         }
+
+        isTyping = false;
     }
 
     // move to next line
@@ -101,6 +115,11 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            if (speakerNameText != null)
+            {
+                speakerNameText.text = string.Empty;
+                speakerNameText.gameObject.SetActive(false);
+            }
             dialogueBox.SetActive(false);
             onDialogueComplete?.Invoke();
         }

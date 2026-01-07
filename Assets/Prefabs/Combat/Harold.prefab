@@ -268,6 +268,43 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d8f1d165028679469080fabb16c319b, type: 2}
   - {fileID: 11400000, guid: 2d8bc5de3fbc1bc4faf4b24fd2978719, type: 2}
   - {fileID: 11400000, guid: 4b70deea78266014aadf5c48e6fb246d, type: 2}
+  combatDialogue:
+  - turnNumber: 1
+    triggerState: 1
+    dialogue:
+    - speaker: Harold
+      text: You aint getting past me, Roose!
+    hasTriggered: 0
+  - turnNumber: 1
+    triggerState: 3
+    dialogue:
+    - speaker: Harold
+      text: Let me show you how it's done.
+    - speaker: Harold
+      text: TAKE THIS!
+    hasTriggered: 0
+  - turnNumber: 2
+    triggerState: 1
+    dialogue:
+    - speaker: Harold
+      text: Heh. That was just me getting warmed up.
+    - speaker: Harold
+      text: Best flee now while you still have a chance.
+    hasTriggered: 0
+  - turnNumber: 3
+    triggerState: 1
+    dialogue:
+    - speaker: Harold
+      text: Don't hit too hard, please!
+    - speaker: Harold
+      text: My looks is all I have going for me.
+    hasTriggered: 0
+  - turnNumber: -1
+    triggerState: 4
+    dialogue:
+    - speaker: Harold
+      text: Wait! Wait! Truce!
+    hasTriggered: 0
 --- !u!1 &6044830471226198980
 GameObject:
   m_ObjectHideFlags: 0

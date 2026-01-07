@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: flicks their head
   damage: 7
   damageType: 0
+  animationName: ComboAttack
   comboSequence: AAA

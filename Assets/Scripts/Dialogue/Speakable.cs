@@ -23,6 +23,8 @@ public class Speakable : MonoBehaviour
     private bool hasTriggered = false;
     private bool cooldown = false;
 
+    public GameObject interactionBubble;
+
     void Update()
     {
         if (playerInRange && !DialogueManager.Instance.IsDialogueActive() && CanTriggerDialogue() && !cooldown)
@@ -35,10 +37,17 @@ public class Speakable : MonoBehaviour
                     hasTriggered = true;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
-            {
-                DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
-                cooldown = true;
+
+            else {
+
+                interactionBubble.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                {
+                    DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
+                    cooldown = true;
+                    interactionBubble.SetActive(false);
+                }
             }
         }
     }
@@ -95,6 +104,7 @@ public class Speakable : MonoBehaviour
         {
             playerInRange = false;
             hasTriggered = false;
+            interactionBubble.SetActive(false);
         }
     }
 }

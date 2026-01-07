@@ -16,7 +16,9 @@ public class Attack : ScriptableObject
     public string flavorText;
     public int damage;
     public DamageType damageType;
-    
+
+    [Header("Animation")]
+    public string animationName;
 
     [Header("Player only")]
     public string comboSequence;

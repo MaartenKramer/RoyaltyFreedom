@@ -35,8 +35,13 @@ public class BattleSystem : MonoBehaviour
     public int dialAttack = 4;
     public int dialDefense = 1;
 
+    [Header("Audio")]
+    public AudioSource typeAudioSource;
+    public AudioClip typeSound;
+
     private Animator playerAnim;
     private Animator enemyAnim;
+    private int turnCount = 0;
 
     void Start()
     {
@@ -83,14 +88,12 @@ public class BattleSystem : MonoBehaviour
             {
                 enemyUnit.TakeDamage(dialAttack, dialDefense);
                 enemyHUD.SetHP(enemyUnit.currentHP);
-                Debug.Log(enemyUnit.currentHP);
             }
 
             dialogueText.text = currentCombo;
 
             if (currentCombo.Length == 5)
-            {   
-
+            {
                 StartCoroutine(ComboExecute());
             }
         }
@@ -104,52 +107,84 @@ public class BattleSystem : MonoBehaviour
         enemyUnit = enemyGO.GetComponent<Unit>();
         playerAnim = playerGO.GetComponentInChildren<Animator>();
         enemyAnim = enemyGO.GetComponentInChildren<Animator>();
-        dialogueText.text = enemyUnit.combatIntro;
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
-        state = BattleState.PLAYERTURN;
+        yield return StartCoroutine(TypeCombatText(enemyUnit.combatIntro));
 
-        yield return new WaitForSeconds(2f);
+        state = BattleState.PLAYERTURN;
+        yield return new WaitForSeconds(1f);
 
         PlayerTurn();
+    }
+
+    IEnumerator CheckForDialogue(BattleState currentState)
+    {
+        if (DialogueManager.Instance == null)
+        {
+            yield break;
+        }
+
+        yield return CheckUnitDialogue(playerUnit, currentState);
+        yield return CheckUnitDialogue(enemyUnit, currentState);
+    }
+
+    IEnumerator CheckUnitDialogue(Unit unit, BattleState currentState)
+    {
+        if (unit.combatDialogue == null)
+            yield break;
+
+        foreach (var trigger in unit.combatDialogue)
+        {
+            bool turnMatches = (trigger.turnNumber == -1) || (trigger.turnNumber == turnCount);
+
+            if (!trigger.hasTriggered && turnMatches && trigger.triggerState == currentState)
+            {
+                trigger.hasTriggered = true;
+
+                bool dialogueFinished = false;
+                DialogueManager.Instance.ShowDialogue(trigger.dialogue, () => dialogueFinished = true);
+
+                yield return new WaitUntil(() => dialogueFinished);
+            }
+        }
     }
 
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(1, 0);
         enemyHUD.SetHP(enemyUnit.currentHP);
-        dialogueText.text = "You strike " + enemyUnit.unitName + "!";
+        yield return StartCoroutine(TypeCombatText("You strike " + enemyUnit.unitName + "!"));
+
+        yield return new WaitForSeconds(1f);
 
         if (isDead)
         {
             state = BattleState.WON;
-
-            yield return new WaitForSeconds(2f);
-
             StartCoroutine(EndBattle());
         }
         else
         {
             state = BattleState.ENEMYTURN;
-
-            yield return new WaitForSeconds(2f);
-
             StartCoroutine(EnemyTurn());
         }
-
     }
 
     IEnumerator EnemyTurn()
     {
         comboDial.SetActive(false);
 
+        yield return StartCoroutine(CheckForDialogue(BattleState.ENEMYTURN));
+
         Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
 
-        dialogueText.text = enemyUnit.unitName + " " + chosenAttack.flavorText + "!";
+        yield return StartCoroutine(TypeCombatText(enemyUnit.unitName + " " + chosenAttack.flavorText + "!"));
 
-        enemyAnim.Play("Attack");
+        if (!string.IsNullOrEmpty(chosenAttack.animationName))
+        {
+            enemyAnim.Play(chosenAttack.animationName);
+        }
 
         yield return new WaitForSeconds(1f);
 
@@ -177,59 +212,61 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EndBattle()
     {
+        yield return StartCoroutine(CheckForDialogue(state));
+
         if (state == BattleState.WON)
         {
-            dialogueText.text = "You won the battle!";
+            yield return StartCoroutine(TypeCombatText("You won the battle!"));
         }
         else if (state == BattleState.LOST)
         {
-            dialogueText.text = "You were defeated.";
+            yield return StartCoroutine(TypeCombatText("You were defeated."));
         }
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         if (enemyUnit.unitName == "Harold")
         {
             Progress.Instance.flags.Add("Harold_Defeated");
             SceneManager.LoadScene("Hub");
         }
-
         else if (enemyUnit.unitName == "Seth Garth")
         {
             SceneManager.LoadScene("RightHall");
         }
-
         else if (enemyUnit.unitName == "Printer 335")
         {
             Progress.Instance.flags.Add("PrinterDies");
             SceneManager.LoadScene("TutorialAlt");
         }
-
         else
         {
             SceneManager.LoadScene("Tutorial");
         }
-
-
     }
 
     void PlayerTurn()
     {
-        dialogueText.text = "Choose an action:";
+        turnCount++;
+        StartCoroutine(PlayerTurnDialogue());
+    }
+
+    IEnumerator PlayerTurnDialogue()
+    {
+        yield return StartCoroutine(CheckForDialogue(BattleState.PLAYERTURN));
+        yield return StartCoroutine(TypeCombatText("Choose an action:"));
         UpdateButtons(true);
     }
 
     IEnumerator PlayerHeal()
     {
         playerUnit.Heal(50);
-
         playerHUD.SetHP(playerUnit.currentHP);
-        dialogueText.text = "You take a bite from an energy bar";
+        yield return StartCoroutine(TypeCombatText("You take a bite from an energy bar"));
 
-        state = BattleState.PLAYERTURN;
+        yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(2f);
-
+        state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
     }
 
@@ -254,10 +291,30 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
         UpdateButtons(false);
+
+        StopAllCoroutines();
+        dialogueText.text = "";
+
         comboDial.SetActive(true);
         currentCombo = "";
         state = BattleState.PLAYERCOMBO;
+        StartCoroutine(CheckForDialogue(BattleState.PLAYERCOMBO));
+    }
 
+    IEnumerator TypeCombatText(string message, float speed = 0.02f)
+    {
+        dialogueText.text = "";
+        foreach (char c in message.ToCharArray())
+        {
+            dialogueText.text += c;
+
+            if (typeAudioSource != null && typeSound != null)
+            {
+                typeAudioSource.PlayOneShot(typeSound);
+            }
+
+            yield return new WaitForSeconds(speed);
+        }
     }
 
     public IEnumerator ComboExecute()
@@ -267,14 +324,13 @@ public class BattleSystem : MonoBehaviour
 
         for (int i = 0; i <= 2; i++)
         {
-            string hopper = currentCombo.Substring(i, 3);
+            string comboAttempt = currentCombo.Substring(i, 3);
 
             foreach (Attack attack in playerUnit.attacks)
             {
-                if (attack.comboSequence == hopper)
+                if (attack.comboSequence == comboAttempt)
                 {
                     successfulCombo = attack;
-                    Debug.Log("Found combo: " + hopper);
                     break;
                 }
             }
@@ -285,33 +341,33 @@ public class BattleSystem : MonoBehaviour
 
         if (successfulCombo != null)
         {
-            playerAnim.Play("ComboAttack");
-            dialogueText.text = playerUnit.unitName + " " + successfulCombo.flavorText + "!";
+            if (!string.IsNullOrEmpty(successfulCombo.animationName))
+            {
+                playerAnim.Play(successfulCombo.animationName);
+            }
+
+            yield return StartCoroutine(TypeCombatText(playerUnit.unitName + " " + successfulCombo.flavorText + "!"));
             yield return new WaitForSeconds(1f);
 
             float damageVariety = Random.Range(0.9f, 1.1f);
             float baseDamage = (successfulCombo.damage + playerUnit.specialAttack) * damageVariety;
 
             int finalDamage;
-            string effectiveMarker;
+            string effectiveMarker = "none";
 
             if (enemyUnit.weaknessType == successfulCombo.damageType)
             {
                 finalDamage = Mathf.RoundToInt(baseDamage * 1.25f);
-                Debug.Log("INCREASING DAMAGE RAAAAAAAAAH" + finalDamage);
                 effectiveMarker = "very effective!";
             }
             else if (enemyUnit.resistantType == successfulCombo.damageType)
             {
                 finalDamage = Mathf.RoundToInt(baseDamage * 0.75f);
-                Debug.Log("REDUCING DAMAGE OH NOOOOOO" + finalDamage);
                 effectiveMarker = "not very effective.";
             }
             else
             {
                 finalDamage = Mathf.RoundToInt(baseDamage);
-                Debug.Log("basic bitch ass attack" + finalDamage);
-                effectiveMarker = "none";
             }
 
             bool isDead = enemyUnit.TakeDamage(finalDamage, enemyUnit.specialDefense);
@@ -321,10 +377,11 @@ public class BattleSystem : MonoBehaviour
 
             if (effectiveMarker != "none")
             {
-                dialogueText.text = "It's " + effectiveMarker;
+                yield return StartCoroutine(TypeCombatText("It's " + effectiveMarker));
+                yield return new WaitForSeconds(1f);
             }
 
-            yield return new WaitForSeconds(1.5f);
+            
 
             if (isDead)
             {
@@ -351,7 +408,8 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
-        void UpdateButtons(bool isInteractable)
+
+    void UpdateButtons(bool isInteractable)
     {
         attackButton.interactable = isInteractable;
         healButton.interactable = isInteractable;
