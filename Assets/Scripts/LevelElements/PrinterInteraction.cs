@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class PrinterInteraction : MonoBehaviour
 {
@@ -14,11 +15,27 @@ public class PrinterInteraction : MonoBehaviour
     public int deskRequirement = 5;
     public float printCooldown = 3f;
 
+    [Header("UI")]
+    public GameObject questUI;
+    public TextMeshProUGUI questTitle;
+    public TextMeshProUGUI questText;
+
     private int printedItems = 0;
     private bool playerInside = false;
     private bool interactionCooldown = false;
     private bool printerBroken = false;
     private bool firstCycleDone = false;
+
+    private void Start()
+    {
+        if (!Progress.Instance.flags.Contains("PrinterDies"))
+        {
+            questUI.SetActive(true);
+            questTitle.SetText("Printing Task 2578");
+            questText.SetText("- Find Printer 335 and print 5 pages.");
+
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -64,6 +81,7 @@ public class PrinterInteraction : MonoBehaviour
         if (!firstCycleDone && printedItems >= deskRequirement && desk != null)
         {
             desk.GetComponent<BoxCollider>().enabled = true;
+            questText.SetText("- Deliver the pages to your coworker on the first row at the fourth desk.");
         }
     }
 
@@ -80,6 +98,7 @@ public class PrinterInteraction : MonoBehaviour
 
         printedItems++;
         Debug.Log("Printed papers: " + printedItems);
+        questText.SetText("- Printed " + printedItems + " out of 5 pages.");
 
         interactionCooldown = false;
     }
@@ -114,5 +133,7 @@ public class PrinterInteraction : MonoBehaviour
         }
 
         Debug.Log("Cycle 1 Complete. Starting bullshit!");
+        questTitle.SetText("Printing Task 2579");
+        questText.SetText("- Find Printer 335 and print 5 pages.");
     }
 }

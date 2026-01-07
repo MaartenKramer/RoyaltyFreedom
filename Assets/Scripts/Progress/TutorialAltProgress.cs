@@ -8,11 +8,17 @@ public class TutorialAltProgress : MonoBehaviour
     public AudioSource printerAudio;
     public AudioClip printExplodeSound;
 
+    public GameObject dawnUI;
+
     private bool exploded = false;
 
     void Start()
     {
-
+        if (Progress.Instance.flags.Contains("PrinterDies"))
+        {
+            dawnUI.SetActive(true);
+            PrinterFire.SetActive(true);
+        }
     }
 
     void Update()
@@ -26,9 +32,9 @@ public class TutorialAltProgress : MonoBehaviour
 
         else if (Progress.Instance.flags.Contains("PrinterDead") && exploded == false)
         {
-            exploded = true;
-            PrinterFire.SetActive(true);
-            printerAudio.PlayOneShot(printExplodeSound);
+            //exploded = true;
+            //PrinterFire.SetActive(true);
+            //printerAudio.PlayOneShot(printExplodeSound);
 
         }
 
