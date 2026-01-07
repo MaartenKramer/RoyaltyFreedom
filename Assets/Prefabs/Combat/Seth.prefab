@@ -55,6 +55,8 @@ MonoBehaviour:
   specialDefense: 3
   maxHP: 160
   currentHP: 160
+  weaknessType: 2
+  resistantType: 0
   attacks:
   - {fileID: 11400000, guid: 13d2d61737d553642a1620d6ac0021e0, type: 2}
   - {fileID: 11400000, guid: aafd0547cb1265f49bc64665115ac0b2, type: 2}

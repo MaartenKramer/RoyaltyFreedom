@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Speakable : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class Speakable : MonoBehaviour
     [Header("Flag Requirements")]
     [Tooltip("What flags are required for dialogue to begin?")]
     public string[] requiredFlags;
-
     [Tooltip("What flags prevent dialogue from beginning?")]
     public string[] blockedByFlags;
 
@@ -20,31 +20,29 @@ public class Speakable : MonoBehaviour
     public bool autoTrigger = false;
 
     private bool playerInRange = false;
-    private bool hasTriggered = false; // Prevent auto-trigger from repeating
+    private bool hasTriggered = false;
+    private bool cooldown = false;
 
-    // check if player is close enough and pressing the right key
     void Update()
     {
-        if (playerInRange && !DialogueManager.Instance.IsDialogueActive() && CanTriggerDialogue())
+        if (playerInRange && !DialogueManager.Instance.IsDialogueActive() && CanTriggerDialogue() && !cooldown)
         {
             if (autoTrigger)
             {
-                // Auto-trigger once when entering range
                 if (!hasTriggered)
                 {
                     DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
                     hasTriggered = true;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
-                // Manual trigger with E key
                 DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
+                cooldown = true;
             }
         }
     }
 
-    // check if all required flags are present
     bool CanTriggerDialogue()
     {
         foreach (string flag in requiredFlags)
@@ -55,7 +53,6 @@ public class Speakable : MonoBehaviour
             }
         }
 
-        // check if any blocked flags are present
         foreach (string flag in blockedByFlags)
         {
             if (Progress.Instance.flags.Contains(flag))
@@ -67,13 +64,20 @@ public class Speakable : MonoBehaviour
         return true;
     }
 
-    // Called when dialogue finishes - sets flags AFTER completion
     void OnDialogueComplete()
     {
         foreach (string flag in flagsToSet)
         {
             Progress.Instance.flags.Add(flag);
         }
+
+        StartCoroutine(ResetTriggerCooldown());
+    }
+
+    IEnumerator ResetTriggerCooldown()
+    {
+        yield return new WaitForSeconds(0.3f);
+        cooldown = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -81,7 +85,7 @@ public class Speakable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            hasTriggered = false; // Reset trigger state when player enters
+            hasTriggered = false;
         }
     }
 
@@ -90,7 +94,7 @@ public class Speakable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            hasTriggered = false; // Reset trigger state when player leaves
+            hasTriggered = false;
         }
     }
 }

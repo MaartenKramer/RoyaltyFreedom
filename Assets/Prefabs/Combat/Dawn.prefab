@@ -117,8 +117,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.95, z: 0.95}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1.0555557, z: 1.0555557}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 634171743570369723}
   m_Father: {fileID: 0}
@@ -144,6 +144,8 @@ MonoBehaviour:
   specialDefense: 2
   maxHP: 250
   currentHP: 250
+  weaknessType: 4
+  resistantType: 4
   attacks:
   - {fileID: 11400000, guid: 02b9803e98b563141bc9585cb803c47e, type: 2}
   - {fileID: 11400000, guid: 10070261f760fee4fb3c52cac133709f, type: 2}

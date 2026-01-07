@@ -10,25 +10,20 @@ public class Unit : MonoBehaviour
     public int specialAttack;
     public int defense;
     public int specialDefense;
-
     public int maxHP;
     public int currentHP;
-    
-    
+
+    public DamageType weaknessType;
+    public DamageType resistantType;
+
     public List<Attack> attacks = new List<Attack>();
 
     public bool TakeDamage(int atk, int def)
     {
         int damage = atk * 4 - def * 2;
         if (damage < 0) damage = 0;
-
         currentHP -= damage;
-        if (currentHP <= 0)
-        {
-            return true;
-        }
-        else
-            return false;
+        return currentHP <= 0;
     }
 
     public void Heal(int amount)

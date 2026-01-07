@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class TutorialAltProgress : MonoBehaviour
 {
+    public GameObject Printer;
     public GameObject PrinterCombatField;
     public GameObject PrinterFire;
-
     public AudioSource printerAudio;
     public AudioClip printExplodeSound;
 
@@ -23,12 +23,19 @@ public class TutorialAltProgress : MonoBehaviour
             PrinterCombatField.SetActive(true);
         }
 
+
         else if (Progress.Instance.flags.Contains("PrinterDead") && exploded == false)
         {
             exploded = true;
             PrinterFire.SetActive(true);
             printerAudio.PlayOneShot(printExplodeSound);
 
+        }
+
+        if (Progress.Instance.flags.Contains("PrinterDies"))
+        {
+            BoxCollider printerCollider = Printer.GetComponent<BoxCollider>();
+            printerCollider.enabled = false;
         }
     }
 }
