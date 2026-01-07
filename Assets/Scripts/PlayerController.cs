@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
         float moveZ = Input.GetAxisRaw("Vertical");
         moveInput = new Vector3(moveX, 0, moveZ).normalized * speed;
 
+        // animation and character direction logic
+        anim.SetFloat("Vertical", moveZ);
+        anim.SetFloat("Horizontal", moveX);
+
         if (moveX != 0 || moveZ != 0)
         {
             anim.SetBool("IsWalk", true);
