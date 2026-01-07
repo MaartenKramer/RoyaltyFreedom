@@ -49,7 +49,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
-            if (currentCombo.Length >= 3)
+            if (currentCombo.Length >= 5)
                 return;
 
             bool keyPressed = false;
@@ -88,10 +88,9 @@ public class BattleSystem : MonoBehaviour
 
             dialogueText.text = currentCombo;
 
-            if (currentCombo.Length == 3)
+            if (currentCombo.Length == 5)
             {   
 
-                state = BattleState.ENEMYTURN;
                 StartCoroutine(ComboExecute());
             }
         }
@@ -162,7 +161,7 @@ public class BattleSystem : MonoBehaviour
         enemyHUD.SetHP(enemyUnit.currentHP);
         playerHUD.SetHP(playerUnit.currentHP);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (isDead)
         {
@@ -256,39 +255,76 @@ public class BattleSystem : MonoBehaviour
             return;
         UpdateButtons(false);
         comboDial.SetActive(true);
+        currentCombo = "";
         state = BattleState.PLAYERCOMBO;
 
     }
 
     public IEnumerator ComboExecute()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         Attack successfulCombo = null;
-        foreach (Attack attack in playerUnit.attacks)
-        {
-            if (attack.comboSequence == currentCombo)
-            {
-                successfulCombo = attack;
-                break;
-            }
-        }
 
-        currentCombo = "";
+        for (int i = 0; i <= 2; i++)
+        {
+            string hopper = currentCombo.Substring(i, 3);
+
+            foreach (Attack attack in playerUnit.attacks)
+            {
+                if (attack.comboSequence == hopper)
+                {
+                    successfulCombo = attack;
+                    Debug.Log("Found combo: " + hopper);
+                    break;
+                }
+            }
+
+            if (successfulCombo != null)
+                break;
+        }
 
         if (successfulCombo != null)
         {
             playerAnim.Play("ComboAttack");
-
+            dialogueText.text = playerUnit.unitName + " " + successfulCombo.flavorText + "!";
             yield return new WaitForSeconds(1f);
 
             float damageVariety = Random.Range(0.9f, 1.1f);
-            int finalDamage = Mathf.RoundToInt((successfulCombo.damage + playerUnit.specialAttack) * damageVariety);
+            float baseDamage = (successfulCombo.damage + playerUnit.specialAttack) * damageVariety;
+
+            int finalDamage;
+            string effectiveMarker;
+
+            if (enemyUnit.weaknessType == successfulCombo.damageType)
+            {
+                finalDamage = Mathf.RoundToInt(baseDamage * 1.25f);
+                Debug.Log("INCREASING DAMAGE RAAAAAAAAAH" + finalDamage);
+                effectiveMarker = "very effective!";
+            }
+            else if (enemyUnit.resistantType == successfulCombo.damageType)
+            {
+                finalDamage = Mathf.RoundToInt(baseDamage * 0.75f);
+                Debug.Log("REDUCING DAMAGE OH NOOOOOO" + finalDamage);
+                effectiveMarker = "not very effective.";
+            }
+            else
+            {
+                finalDamage = Mathf.RoundToInt(baseDamage);
+                Debug.Log("basic bitch ass attack" + finalDamage);
+                effectiveMarker = "none";
+            }
 
             bool isDead = enemyUnit.TakeDamage(finalDamage, enemyUnit.specialDefense);
             enemyHUD.SetHP(enemyUnit.currentHP);
-            dialogueText.text = playerUnit.unitName + " " + successfulCombo.flavorText + "!";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
+
+            if (effectiveMarker != "none")
+            {
+                dialogueText.text = "It's " + effectiveMarker;
+            }
+
+            yield return new WaitForSeconds(1.5f);
 
             if (isDead)
             {
@@ -303,9 +339,6 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "You fail to realize a combo.";
-            yield return new WaitForSeconds(2f);
-
             if (enemyUnit.currentHP <= 0)
             {
                 state = BattleState.WON;
@@ -318,7 +351,7 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
-    void UpdateButtons(bool isInteractable)
+        void UpdateButtons(bool isInteractable)
     {
         attackButton.interactable = isInteractable;
         healButton.interactable = isInteractable;

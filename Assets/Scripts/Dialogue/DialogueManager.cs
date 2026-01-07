@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialogueBox.activeSelf && Input.GetMouseButtonDown(0))
+        if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
         {
             if (textComponent.text == lines[index].text)
             {

@@ -5,7 +5,8 @@ public enum DamageType
     Blunt,
     Piercing,
     Electronic,
-    Slashing
+    Slashing,
+    None
 }
 
 [CreateAssetMenu(fileName = "New Attack", menuName = "Combat/Attack")]
