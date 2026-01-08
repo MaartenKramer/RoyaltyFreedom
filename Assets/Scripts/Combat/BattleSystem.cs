@@ -11,17 +11,20 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject[] enemyPrefabs;
 
+
+    [Header("Battle Stations")]
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
     Unit playerUnit;
     Unit enemyUnit;
 
+    [Header("HUD")]
     public TextMeshProUGUI dialogueText;
-
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
+    [Header ("Battle State")]
     public BattleState state;
 
     [Header("UI Buttons")]
@@ -41,7 +44,21 @@ public class BattleSystem : MonoBehaviour
 
     private Animator playerAnim;
     private Animator enemyAnim;
+
+    [Header("Animation")]
+    public Animator effectiveAnim;
+    public float moveDistance = 2f;
+    public float moveSpeed = 5f;
+
+    private Vector3 playerOriginalPos;
+    private Vector3 enemyOriginalPos;
+
+    private bool effectiveDiscovered = false;
+    private bool ineffectiveDiscovered = false;
+
     private int turnCount = 0;
+
+
 
     void Start()
     {
@@ -63,24 +80,28 @@ public class BattleSystem : MonoBehaviour
             {
                 currentCombo += "W";
                 playerAnim.Play("DialW");
+                enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 currentCombo += "A";
                 playerAnim.Play("DialA");
+                enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 currentCombo += "S";
                 playerAnim.Play("DialS");
+                enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 currentCombo += "D";
                 playerAnim.Play("DialD");
+                enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
 
@@ -110,6 +131,9 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
+
+        playerOriginalPos = playerGO.transform.position;
+        enemyOriginalPos = enemyGO.transform.position;
 
         yield return StartCoroutine(TypeCombatText(enemyUnit.combatIntro));
 
@@ -175,9 +199,11 @@ public class BattleSystem : MonoBehaviour
     {
         comboDial.SetActive(false);
 
-        yield return StartCoroutine(CheckForDialogue(BattleState.ENEMYTURN));
+        StartCoroutine(MoveUnit(enemyUnit.transform, enemyOriginalPos + Vector3.left * moveDistance));
 
         Attack chosenAttack = enemyUnit.attacks[Random.Range(0, enemyUnit.attacks.Count)];
+
+        playerAnim.Play("Hurt");
 
         yield return StartCoroutine(TypeCombatText(enemyUnit.unitName + " " + chosenAttack.flavorText + "!"));
 
@@ -195,6 +221,8 @@ public class BattleSystem : MonoBehaviour
 
         enemyHUD.SetHP(enemyUnit.currentHP);
         playerHUD.SetHP(playerUnit.currentHP);
+
+        yield return StartCoroutine(MoveUnit(enemyUnit.transform, enemyOriginalPos));
 
         yield return new WaitForSeconds(1f);
 
@@ -260,8 +288,11 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
+        playerAnim.Play("Heal");
+
         playerUnit.Heal(50);
         playerHUD.SetHP(playerUnit.currentHP);
+
         yield return StartCoroutine(TypeCombatText("You take a bite from an energy bar"));
 
         yield return new WaitForSeconds(1f);
@@ -298,6 +329,9 @@ public class BattleSystem : MonoBehaviour
         comboDial.SetActive(true);
         currentCombo = "";
         state = BattleState.PLAYERCOMBO;
+
+        StartCoroutine(MoveUnit(playerUnit.transform, playerOriginalPos + Vector3.right * moveDistance));
+
         StartCoroutine(CheckForDialogue(BattleState.PLAYERCOMBO));
     }
 
@@ -349,6 +383,8 @@ public class BattleSystem : MonoBehaviour
             yield return StartCoroutine(TypeCombatText(playerUnit.unitName + " " + successfulCombo.flavorText + "!"));
             yield return new WaitForSeconds(1f);
 
+            enemyAnim.Play("ComboHurt");
+
             float damageVariety = Random.Range(0.9f, 1.1f);
             float baseDamage = (successfulCombo.damage + playerUnit.specialAttack) * damageVariety;
 
@@ -357,11 +393,34 @@ public class BattleSystem : MonoBehaviour
 
             if (enemyUnit.weaknessType == successfulCombo.damageType)
             {
+                if (!effectiveDiscovered)
+                {
+                    effectiveAnim.Play("EffectiveDiscovered");
+                    effectiveDiscovered = true;
+                }
+
+                else
+                {
+                    effectiveAnim.Play("Effective");
+                }
+
                 finalDamage = Mathf.RoundToInt(baseDamage * 1.25f);
                 effectiveMarker = "very effective!";
+
             }
             else if (enemyUnit.resistantType == successfulCombo.damageType)
             {
+                if (!ineffectiveDiscovered)
+                {
+                    effectiveAnim.Play("IneffectiveDiscovered");
+                    ineffectiveDiscovered = true;
+                }
+
+                else
+                {
+                    effectiveAnim.Play("Ineffective");
+                }
+
                 finalDamage = Mathf.RoundToInt(baseDamage * 0.75f);
                 effectiveMarker = "not very effective.";
             }
@@ -373,6 +432,8 @@ public class BattleSystem : MonoBehaviour
             bool isDead = enemyUnit.TakeDamage(finalDamage, enemyUnit.specialDefense);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
+            yield return StartCoroutine(MoveUnit(playerUnit.transform, playerOriginalPos));
+
             yield return new WaitForSeconds(1f);
 
             if (effectiveMarker != "none")
@@ -380,8 +441,6 @@ public class BattleSystem : MonoBehaviour
                 yield return StartCoroutine(TypeCombatText("It's " + effectiveMarker));
                 yield return new WaitForSeconds(1f);
             }
-
-            
 
             if (isDead)
             {
@@ -396,6 +455,8 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
+            yield return StartCoroutine(MoveUnit(playerUnit.transform, playerOriginalPos));
+
             if (enemyUnit.currentHP <= 0)
             {
                 state = BattleState.WON;
@@ -407,6 +468,16 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(EnemyTurn());
             }
         }
+    }
+
+    IEnumerator MoveUnit(Transform unit, Vector3 targetPos)
+    {
+        while (Vector3.Distance(unit.position, targetPos) > 0.01f)
+        {
+            unit.position = Vector3.Lerp(unit.position, targetPos, Time.deltaTime * moveSpeed);
+            yield return null;
+        }
+        unit.position = targetPos;
     }
 
     void UpdateButtons(bool isInteractable)
