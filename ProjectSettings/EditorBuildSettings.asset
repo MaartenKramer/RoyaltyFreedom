@@ -41,6 +41,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combat Scenes/TutRoomCombat.unity
     guid: c458d3532d454224b978ed167f3f618c
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/IntroductionCutscene.unity
+    guid: 0007e6f7d927d3341af1c68d913dd101
+  - enabled: 1
+    path: Assets/Scenes/Demo Level/LeftHallAlt.unity
+    guid: f2b55cbed55272346a2aeb6227ef58f8
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/ClosetCutscene.unity
+    guid: 06edadd0f8849b845811927ef31e4970
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/PostPrinterCutscene.unity
+    guid: 0031938899011584080544a5fca8a0df
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

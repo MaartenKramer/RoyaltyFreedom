@@ -237,7 +237,7 @@ public class BattleSystem : MonoBehaviour
         else if (enemyUnit.unitName == "Printer 335")
         {
             Progress.Instance.flags.Add("PrinterDies");
-            SceneManager.LoadScene("TutorialAlt");
+            SceneManager.LoadScene("PostPrinterCutscene");
         }
         else
         {
