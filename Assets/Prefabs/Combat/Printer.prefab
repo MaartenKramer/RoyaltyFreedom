@@ -169,10 +169,20 @@ MonoBehaviour:
   maxHP: 150
   currentHP: 150
   weaknessType: 1
+  resistantType: 0
   attacks:
   - {fileID: 11400000, guid: 0145185be484aad42b55c5e89d56aa12, type: 2}
   - {fileID: 11400000, guid: 9478475732d9b244c91e5f5d7d4410c3, type: 2}
   - {fileID: 11400000, guid: ed11949ea1fb9874e8a3687d57ee1dca, type: 2}
+  combatDialogue:
+  - turnNumber: 2
+    triggerState: 1
+    dialogue:
+    - speaker: Printer 335
+      text: ERROR! Magenta ink depleted!
+    - speaker: Printer 335
+      text: Please refill the ink cartridge. Only 95.99 CC!
+    hasTriggered: 0
 --- !u!1 &7958537502924969795
 GameObject:
   m_ObjectHideFlags: 0
