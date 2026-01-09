@@ -2923,13 +2923,14 @@ GameObject:
   m_Component:
   - component: {fileID: 210757074}
   - component: {fileID: 210757075}
+  - component: {fileID: 210757076}
   m_Layer: 0
   m_Name: EnemyWeakResDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &210757074
 Transform:
   m_ObjectHideFlags: 0
@@ -2939,13 +2940,11 @@ Transform:
   m_GameObject: {fileID: 210757073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 10.03, y: 5.73, z: -9.07}
+  m_LocalPosition: {x: 10.03, y: 5.41, z: -9.07}
   m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1625993306}
-  - {fileID: 356389071}
-  - {fileID: 844283872}
+  - {fileID: 2046762274}
   - {fileID: 2134315588}
   m_Father: {fileID: 334957088}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
@@ -2959,8 +2958,30 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_SortAtRoot: 0
+--- !u!95 &210757076
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210757073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 569e3971239374445aee31dbd2196e1b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &221786917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,12 +4041,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356389070}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.064947195, y: 0.064947195, z: 0.70411783, w: 0.70411783}
-  m_LocalPosition: {x: 1.33, y: -1.916, z: 0.01}
-  m_LocalScale: {x: 1.01, y: 0.32, z: 1}
+  m_LocalRotation: {x: 0.06494719, y: 0.06494719, z: 0.70411783, w: 0.70411783}
+  m_LocalPosition: {x: 1.328, y: -3.23, z: 0.008}
+  m_LocalScale: {x: 1.0100001, y: 0.31999996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 210757074}
+  m_Father: {fileID: 2046762274}
   m_LocalEulerAnglesHint: {x: 0, y: 10.54, z: 90}
 --- !u!212 &356389072
 SpriteRenderer:
@@ -10100,7 +10121,7 @@ GameObject:
   - component: {fileID: 844283874}
   - component: {fileID: 844283873}
   m_Layer: 5
-  m_Name: EnemyCanvas
+  m_Name: WeakResCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10114,8 +10135,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844283871}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.05}
-  m_LocalScale: {x: 0.10691672, y: 0.106916726, z: 0.106916726}
+  m_LocalPosition: {x: 0, y: 0, z: 0.04999978}
+  m_LocalScale: {x: 0.106916726, y: 0.106916726, z: 0.10691673}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 936077398}
@@ -10125,7 +10146,7 @@ RectTransform:
   - {fileID: 141667759}
   - {fileID: 128056667}
   - {fileID: 727002254}
-  m_Father: {fileID: 210757074}
+  m_Father: {fileID: 2046762274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10224,7 +10245,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &852877737
 GameObject:
@@ -18982,12 +19003,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625993305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.064947195, y: 0.064947195, z: 0.70411783, w: 0.70411783}
-  m_LocalPosition: {x: -1.325, y: -1.916, z: 0.01}
-  m_LocalScale: {x: 1.01, y: 0.32, z: 1}
+  m_LocalRotation: {x: 0.06494719, y: 0.06494719, z: 0.70411783, w: 0.70411783}
+  m_LocalPosition: {x: -1.332, y: -3.35, z: 0.003}
+  m_LocalScale: {x: 1.0100001, y: 0.31999996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 210757074}
+  m_Father: {fileID: 2046762274}
   m_LocalEulerAnglesHint: {x: 0, y: 10.54, z: 90}
 --- !u!212 &1625993307
 SpriteRenderer:
@@ -24545,6 +24566,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040732985}
   m_CullTransparentMesh: 1
+--- !u!1 &2046762273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046762274}
+  m_Layer: 0
+  m_Name: CablesAndScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046762274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046762273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1625993306}
+  - {fileID: 356389071}
+  - {fileID: 844283872}
+  m_Father: {fileID: 210757074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050068606
 GameObject:
   m_ObjectHideFlags: 0
