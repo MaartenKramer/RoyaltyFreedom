@@ -19120,7 +19120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2198207907809821635, guid: 420a67056b108cd49a4c3c9473702d63, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895540618449365791, guid: 420a67056b108cd49a4c3c9473702d63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19360,6 +19360,9 @@ MonoBehaviour:
   dialDefense: 1
   typeAudioSource: {fileID: 481222844}
   typeSound: {fileID: 8300000, guid: 07b1cf1d13ca3e647a2fed77616dc7a9, type: 3}
+  effectiveAnim: {fileID: 0}
+  moveDistance: 2
+  moveSpeed: 5
 --- !u!4 &1656995962
 Transform:
   m_ObjectHideFlags: 0
@@ -19622,7 +19625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843199953485924568, guid: 1303a810eb554984ab13509a3c0bf19c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -62,6 +62,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aafd0547cb1265f49bc64665115ac0b2, type: 2}
   - {fileID: 11400000, guid: 5942089c83790e24bb2bfcfe0c5d9304, type: 2}
   - {fileID: 11400000, guid: 958aaf27fc0a5f045afc97ac03cba028, type: 2}
+  combatDialogue: []
 --- !u!1 &3285472745966149904
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5fb62a737d1c20e4d8f26a9c97b5424b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f5850926a9d3c3448293c38b598c261, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -254,7 +255,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0090b436d56125a46bb4a163425b5dd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2c93745556e88940b1fb8a37764cf1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
