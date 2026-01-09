@@ -1422,7 +1422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.2, y: -145.3}
+  m_AnchoredPosition: {x: 324.2, y: -145.29999}
   m_SizeDelta: {x: 648.4, y: 125.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135255205
@@ -1626,7 +1626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.2, y: -145.3}
+  m_AnchoredPosition: {x: 324.2, y: -145.29999}
   m_SizeDelta: {x: 648.4, y: 125.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177317015
@@ -2324,8 +2324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 72.88}
-  m_SizeDelta: {x: 1814.9, y: 145.76}
+  m_AnchoredPosition: {x: 3.6, y: 72.88}
+  m_SizeDelta: {x: 1807.6, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &295752853
 Animator:
@@ -2404,7 +2404,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2640,6 +2640,7 @@ MonoBehaviour:
   flagsToSet:
   - PrinterCombat
   autoTrigger: 1
+  interactionBubble: {fileID: 0}
 --- !u!114 &328862202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,6 +2665,7 @@ MonoBehaviour:
   flagsToSet:
   - PrinterDead
   autoTrigger: 1
+  interactionBubble: {fileID: 0}
 --- !u!1 &339087414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,7 +3960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &544056247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9863,6 +9865,7 @@ MonoBehaviour:
   sceneToLoad: LeftHallAlt
   exitPointID: LeftHallTutAlt
   autoTransition: 0
+  interactionBubble: {fileID: 0}
 --- !u!65 &1451813387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12333,6 +12336,8 @@ MonoBehaviour:
   speakerNameText: {fileID: 645914401}
   textComponent: {fileID: 295752854}
   textSpeed: 0.02
+  typeAudioSource: {fileID: 0}
+  typeSound: {fileID: 0}
 --- !u!1 &1791431191
 GameObject:
   m_ObjectHideFlags: 0
@@ -14051,6 +14056,7 @@ MonoBehaviour:
   flagsToSet:
   - PrinterDead
   autoTrigger: 0
+  interactionBubble: {fileID: 0}
 --- !u!114 &3591413660172955015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14091,6 +14097,7 @@ MonoBehaviour:
   flagsToSet:
   - PrinterCombat
   autoTrigger: 1
+  interactionBubble: {fileID: 0}
 --- !u!1001 &3755758389151078056
 PrefabInstance:
   m_ObjectHideFlags: 0

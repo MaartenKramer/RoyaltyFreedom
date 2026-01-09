@@ -493,6 +493,8 @@ MonoBehaviour:
   speakerNameText: {fileID: 1251184470}
   textComponent: {fileID: 1184988695}
   textSpeed: 0.05
+  typeAudioSource: {fileID: 0}
+  typeSound: {fileID: 0}
 --- !u!4 &87773741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8313218434961709706, guid: 703c4a3c6ee739d41bced62e587e4f1d, type: 3}
@@ -1258,6 +1260,7 @@ MonoBehaviour:
   flagsToSet:
   - BenIntro
   autoTrigger: 1
+  interactionBubble: {fileID: 0}
 --- !u!65 &322123093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1302,6 +1305,7 @@ MonoBehaviour:
   flagsToSet:
   - Ben1
   autoTrigger: 0
+  interactionBubble: {fileID: 0}
 --- !u!1 &341267251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1680,7 @@ MonoBehaviour:
   sceneToLoad: LeftHall
   exitPointID: LeftHallCloset
   autoTransition: 0
+  interactionBubble: {fileID: 0}
 --- !u!65 &409415851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3785,8 +3790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 72.88}
-  m_SizeDelta: {x: 1814.9, y: 145.76}
+  m_AnchoredPosition: {x: 2.4, y: 72.88}
+  m_SizeDelta: {x: 1810.1, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1184988694
 Animator:
@@ -3864,7 +3869,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
