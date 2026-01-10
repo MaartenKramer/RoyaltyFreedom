@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: staples the enemy in place
   damage: 12
   damageType: 1
+  animationName: Piercing2
   comboSequence: WWA

@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: throws a stray pushpin at them
   damage: 7
   damageType: 1
+  animationName: Piercing1
   comboSequence: WWW
