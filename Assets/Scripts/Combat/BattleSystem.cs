@@ -141,6 +141,8 @@ public class BattleSystem : MonoBehaviour
         playerOriginalPos = playerGO.transform.position;
         enemyOriginalPos = enemyGO.transform.position;
 
+        StartCoroutine(TypeCombatText(""));
+
         yield return new WaitForSeconds(0.1f);
 
         StartCoroutine(TypeCombatText(enemyUnit.combatIntro));
