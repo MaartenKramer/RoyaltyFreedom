@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: cuts their finger with a sticky note
   damage: 7
   damageType: 3
+  animationName: Slashing1
   comboSequence: SSS

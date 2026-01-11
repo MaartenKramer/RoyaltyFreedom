@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: gives them the backhand special
   damage: 12
   damageType: 0
+  animationName: Blunt2
   comboSequence: AAD

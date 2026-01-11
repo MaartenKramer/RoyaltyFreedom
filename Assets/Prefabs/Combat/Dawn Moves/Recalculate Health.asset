@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: removes a 10 from the enemy's hp
   damage: 12
   damageType: 2
+  animationName: Electronic2
   comboSequence: DDS
