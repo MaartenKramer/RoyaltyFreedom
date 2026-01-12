@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: strikes you meekly
   damage: 6
   damageType: 0
+  animationName: Strike
   comboSequence: 

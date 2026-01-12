@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: gives a VERY firm handshake
   damage: 9
   damageType: 0
+  animationName: Handshake
   comboSequence: 

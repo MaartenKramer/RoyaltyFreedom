@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: spills his coffee all over you
   damage: 9
   damageType: 1
+  animationName: Coffee
   comboSequence: 
