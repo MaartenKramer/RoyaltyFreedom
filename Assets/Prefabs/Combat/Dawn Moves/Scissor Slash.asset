@@ -16,5 +16,5 @@ MonoBehaviour:
   flavorText: runs around with scissors
   damage: 12
   damageType: 3
-  animationName: Slashing2
+  animationName: Slash2
   comboSequence: SSW
