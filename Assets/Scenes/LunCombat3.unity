@@ -3485,7 +3485,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 223426123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 496851518}
+        m_TargetAssemblyTypeName: SkillsProgress, Assembly-CSharp
+        m_MethodName: OnPreviousButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &223426123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4183,6 +4195,7 @@ Transform:
   - {fileID: 6645216490690687147}
   - {fileID: 880624149}
   - {fileID: 210757074}
+  - {fileID: 348845432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346948026
@@ -4266,7 +4279,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 334957088}
     m_Modifications:
     - target: {fileID: 6508245476521551905, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
       propertyPath: m_Name
@@ -4290,7 +4303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8629398091253542817, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8629398091253542817, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4298,7 +4311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8629398091253542817, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8629398091253542817, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4317,6 +4330,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
+--- !u!4 &348845432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8629398091253542817, guid: e43160f3dc3179940861c6bb96ab4b6b, type: 3}
+  m_PrefabInstance: {fileID: 348845431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &356389070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,6 +6535,72 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &496851516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496851517}
+  - component: {fileID: 496851518}
+  m_Layer: 0
+  m_Name: SkillsProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496851517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496851516}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.9069595, y: 3.50806, z: -15.694301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1719365979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496851518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496851516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2111349b9649a4c927ca974fdf47bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillsProgress
+  comboElements:
+  - comboSequence: WWW
+    blackoutUI: {fileID: 852877737}
+  - comboSequence: AAA
+    blackoutUI: {fileID: 1131977585}
+  - comboSequence: SSS
+    blackoutUI: {fileID: 596406455}
+  - comboSequence: DDD
+    blackoutUI: {fileID: 1310285425}
+  - comboSequence: WWA
+    blackoutUI: {fileID: 1210804108}
+  - comboSequence: AAD
+    blackoutUI: {fileID: 76347252}
+  - comboSequence: SSW
+    blackoutUI: {fileID: 2050068606}
+  - comboSequence: DDS
+    blackoutUI: {fileID: 522313885}
+  skillsPages:
+  - {fileID: 2025899168}
+  - {fileID: 2131179346}
+  - {fileID: 1052898196}
+  - {fileID: 636432298}
 --- !u!1 &500333622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,7 +9600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &776858516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12692,7 +12776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 980969695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 496851518}
+        m_TargetAssemblyTypeName: SkillsProgress, Assembly-CSharp
+        m_MethodName: OnNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &980969695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19826,6 +19922,50 @@ Transform:
   - {fileID: 1815385066}
   m_Father: {fileID: 6645216490690687147}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1643260013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1643260015}
+  - component: {fileID: 1643260014}
+  m_Layer: 0
+  m_Name: Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1643260014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643260013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9fdbcf4a1b00840ab3b5777e68afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Progress
+--- !u!4 &1643260015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643260013}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.41429, y: 6.08603, z: -21.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1643818631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20614,6 +20754,7 @@ Transform:
   - {fileID: 675605149}
   - {fileID: 1656995962}
   - {fileID: 752254455}
+  - {fileID: 496851517}
   - {fileID: 1850571049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26341,4 +26482,4 @@ SceneRoots:
   - {fileID: 1848156948}
   - {fileID: 821065303}
   - {fileID: 334957088}
-  - {fileID: 348845431}
+  - {fileID: 1643260015}

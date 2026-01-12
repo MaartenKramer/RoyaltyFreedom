@@ -360,6 +360,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator StartComboSequence()
     {
+        comboText.text = "";
         currentCombo = "";
 
         yield return StartCoroutine(CheckForDialogue(BattleState.PLAYERCOMBO));
@@ -385,7 +386,7 @@ public class BattleSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Attack successfulCombo = null;
-        int successfulIndex = -1;
+        int successfulIndex = 9;
 
         for (int i = 0; i <= 2; i++)
         {
@@ -405,7 +406,7 @@ public class BattleSystem : MonoBehaviour
                 break;
         }
 
-        if (successfulCombo != null && successfulIndex != -1)
+        if (successfulCombo != null && successfulIndex != 9)
         {
             string preCombo = currentCombo.Substring(0, successfulIndex);
             string combo = currentCombo.Substring(successfulIndex, 3);
@@ -413,6 +414,13 @@ public class BattleSystem : MonoBehaviour
 
             comboText.text = preCombo + "<color=#00FF00>" + combo + "</color>" + postCombo;
             comboFound.Play(0);
+
+            string comboFlag = "Combo_" + successfulCombo.comboSequence;
+            if (!Progress.Instance.flags.Contains(comboFlag))
+            {
+                Progress.Instance.flags.Add(comboFlag);
+                Debug.Log("Discovered combo: " + successfulCombo.comboSequence);
+            }
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -429,6 +437,8 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(TypeCombatText(playerUnit.unitName + " " + successfulCombo.flavorText + "!"));
 
             yield return new WaitForSeconds(0.8f);
+
+
 
             enemyAnim.Play("ComboHurt");
 
@@ -535,7 +545,7 @@ public class BattleSystem : MonoBehaviour
         isTyping = true;
         dialogueText.text = "";
 
-        // Hide continue icon for combat text
+
         if (DialogueManager.Instance != null && DialogueManager.Instance.continueIcon != null)
         {
             DialogueManager.Instance.continueIcon.SetActive(false);
