@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 322123092}
   - component: {fileID: 322123094}
   m_Layer: 0
-  m_Name: Janitor Ben
+  m_Name: Janitor Ben1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

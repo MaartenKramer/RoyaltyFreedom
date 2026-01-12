@@ -276,14 +276,6 @@ MonoBehaviour:
     - speaker: Harold
       text: You aint getting past me, Roose!
     hasTriggered: 0
-  - turnNumber: 1
-    triggerState: 3
-    dialogue:
-    - speaker: Harold
-      text: Let me show you how it's done.
-    - speaker: Harold
-      text: TAKE THIS!
-    hasTriggered: 0
   - turnNumber: 2
     triggerState: 1
     dialogue:
@@ -305,6 +297,49 @@ MonoBehaviour:
     dialogue:
     - speaker: Harold
       text: Wait! Wait! Truce!
+    hasTriggered: 0
+  - turnNumber: 1
+    triggerState: 3
+    dialogue:
+    - speaker: Harold
+      text: You may have those crazy moves, but I'm powerful too!
+    - speaker: Harold
+      text: TAAAAKE THIS!
+    hasTriggered: 0
+  - turnNumber: 1
+    triggerState: 2
+    dialogue:
+    - speaker: Janitor Ben
+      text: Hey, Kid!
+    - speaker: Janitor Ben
+      text: Seems you got yourself into a tussle!
+    - speaker: Janitor Ben
+      text: Stocks lack a lot of creativity, so those fancy combos of yours can give
+        you an advantage!
+    - speaker: Janitor Ben
+      text: 'There are simple combos and advanced combos:'
+    - speaker: Janitor Ben
+      text: Simple combos only have 1 letter type.
+    - speaker: Janitor Ben
+      text: While advanced combos have 2!
+    - speaker: Janitor Ben
+      text: Combos are always 3 letters long, but you have 5 inputs.
+    - speaker: Janitor Ben
+      text: So that's 3 chances for a smackdown!
+    - speaker: Janitor Ben
+      text: Give it a try!
+    hasTriggered: 0
+  - turnNumber: 2
+    triggerState: 2
+    dialogue:
+    - speaker: Janitor Ben
+      text: Oh yeah, before I forget!
+    - speaker: Janitor Ben
+      text: Each combo has its own element.
+    - speaker: Janitor Ben
+      text: And each foe is weak and strong against something different.
+    - speaker: Janitor Ben
+      text: Try and figure out what works best for some extra oomph!
     hasTriggered: 0
 --- !u!95 &8642276481367049195
 Animator:

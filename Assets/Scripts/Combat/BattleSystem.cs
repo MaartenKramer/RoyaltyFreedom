@@ -20,9 +20,15 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
 
     [Header("HUD")]
+    public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI comboText;
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
+
+    public GameObject HealBG;
+    public GameObject AttackBG;
+    public GameObject SkillBG;
 
     [Header("Battle State")]
     public BattleState state;
@@ -30,7 +36,7 @@ public class BattleSystem : MonoBehaviour
     [Header("UI Buttons")]
     public Button attackButton;
     public Button healButton;
-    public Button comboButton;
+    public Button skillsButton;
 
     [Header("Combos")]
     public string currentCombo;
@@ -117,7 +123,7 @@ public class BattleSystem : MonoBehaviour
                 enemyHUD.SetHP(enemyUnit.currentHP);
             }
 
-            dialogueText.text = currentCombo;
+            comboText.text = currentCombo;
 
             if (currentCombo.Length == 5)
             {
@@ -208,6 +214,8 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         comboDial.SetActive(false);
+        HealBG.SetActive(false);
+        AttackBG.SetActive(false);
 
 
         yield return StartCoroutine(CheckForDialogue(BattleState.ENEMYTURN));
@@ -253,6 +261,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EndBattle()
     {
+        HealBG.SetActive(false);
+        AttackBG.SetActive(false);
+
         yield return StartCoroutine(CheckForDialogue(state));
 
         if (state == BattleState.WON)
@@ -302,6 +313,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
+        HealBG.SetActive(true);
         playerAnim.Play("Heal");
 
         playerUnit.Heal(50);
@@ -319,6 +331,8 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYERTURN)
             return;
+        dialogueBox.SetActive(true);
+        SkillBG.SetActive(false);
         UpdateButtons(false);
         StartCoroutine(PlayerAttack());
     }
@@ -327,6 +341,8 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYERTURN)
             return;
+        dialogueBox.SetActive(true);
+        SkillBG.SetActive(false);
         UpdateButtons(false);
         StartCoroutine(PlayerHeal());
     }
@@ -336,17 +352,33 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
         UpdateButtons(false);
+        dialogueBox.SetActive(true);
+        SkillBG.SetActive(false);
 
-        StopAllCoroutines();
-        dialogueText.text = "";
+        StartCoroutine(StartComboSequence());
+    }
 
-        comboDial.SetActive(true);
+    IEnumerator StartComboSequence()
+    {
         currentCombo = "";
+
+        yield return StartCoroutine(CheckForDialogue(BattleState.PLAYERCOMBO));
+
+        dialogueText.text = "";
+        AttackBG.SetActive(true);
+        comboDial.SetActive(true);
         state = BattleState.PLAYERCOMBO;
 
         StartCoroutine(MoveUnit(playerUnit.transform, playerOriginalPos + Vector3.right * moveDistance));
+    }
 
-        StartCoroutine(CheckForDialogue(BattleState.PLAYERCOMBO));
+    public void onSkillsButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        dialogueBox.SetActive(false);
+        SkillBG.SetActive(true);
     }
 
     public IEnumerator ComboExecute()
@@ -379,11 +411,13 @@ public class BattleSystem : MonoBehaviour
             string combo = currentCombo.Substring(successfulIndex, 3);
             string postCombo = currentCombo.Substring(successfulIndex + 3);
 
-            dialogueText.text = preCombo + "<color=#00FF00>" + combo + "</color>" + postCombo;
+            comboText.text = preCombo + "<color=#00FF00>" + combo + "</color>" + postCombo;
             comboFound.Play(0);
 
             yield return new WaitForSeconds(0.5f);
         }
+
+        AttackBG.SetActive(false);
 
         if (successfulCombo != null)
         {
@@ -394,6 +428,7 @@ public class BattleSystem : MonoBehaviour
 
             StartCoroutine(TypeCombatText(playerUnit.unitName + " " + successfulCombo.flavorText + "!"));
 
+            yield return new WaitForSeconds(0.8f);
 
             enemyAnim.Play("ComboHurt");
 
@@ -407,9 +442,9 @@ public class BattleSystem : MonoBehaviour
             {
                 if (!effectiveDiscovered)
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.4f);
                     effectiveAnim.Play("EffectiveDiscovered");
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.4f);
                     effectiveHider.SetActive(false);
                     effectiveDiscovered = true;
                 }
@@ -425,9 +460,9 @@ public class BattleSystem : MonoBehaviour
             {
                 if (!ineffectiveDiscovered)
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.4f);
                     effectiveAnim.Play("IneffectiveDiscovered");
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.4f);
                     ineffectiveHider.SetActive(false);
                     ineffectiveDiscovered = true;
                 }
@@ -499,6 +534,13 @@ public class BattleSystem : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
+
+        // Hide continue icon for combat text
+        if (DialogueManager.Instance != null && DialogueManager.Instance.continueIcon != null)
+        {
+            DialogueManager.Instance.continueIcon.SetActive(false);
+        }
+
         foreach (char c in message.ToCharArray())
         {
             dialogueText.text += c;
@@ -523,6 +565,6 @@ public class BattleSystem : MonoBehaviour
     {
         attackButton.interactable = isInteractable;
         healButton.interactable = isInteractable;
-        comboButton.interactable = isInteractable;
+        skillsButton.interactable = isInteractable;
     }
 }

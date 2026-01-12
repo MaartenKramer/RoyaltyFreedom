@@ -183,6 +183,18 @@ MonoBehaviour:
     - speaker: Printer 335
       text: Please refill the ink cartridge. Only 95.99 CC!
     hasTriggered: 0
+  - turnNumber: 3
+    triggerState: 1
+    dialogue:
+    - speaker: Dawn
+      text: This is taking too long.
+    - speaker: Dawn
+      text: Unless...
+    - speaker: 
+      text: Dawn had an epiphany!
+    - speaker: 
+      text: Dawn Learned "DDD" Combo!
+    hasTriggered: 0
 --- !u!1 &7958537502924969795
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     public GameObject dialogueBox;
+    public GameObject continueIcon;
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI textComponent;
     public float textSpeed = 0.05f;
@@ -25,7 +26,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Audio")]
     public AudioSource typeAudioSource;
     public AudioClip typeSound;
-
     private bool isTyping = false;
 
     void Awake()
@@ -44,14 +44,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
         {
+            if (lines == null || index >= lines.Length)
+                return;
+
             if (isTyping)
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index].text;
+                continueIcon.SetActive(true);
                 isTyping = false;
             }
             else if (textComponent.text == lines[index].text)
             {
+                continueIcon.SetActive(false);
                 NextLine();
             }
         }
@@ -60,17 +65,32 @@ public class DialogueManager : MonoBehaviour
     // initializes dialogue
     public void ShowDialogue(DialogueLine[] newLines, Action onComplete = null)
     {
+        if (newLines == null || newLines.Length == 0)
+        {
+            Debug.LogWarning("ShowDialogue called with null or empty dialogue lines!");
+            onComplete?.Invoke();
+            return;
+        }
+
         lines = newLines;
         onDialogueComplete = onComplete;
         index = 0;
         dialogueBox.SetActive(true);
         textComponent.text = string.Empty;
+        continueIcon.SetActive(false);
         UpdateSpeakerName();
         StartCoroutine(TypeLine());
     }
 
     void UpdateSpeakerName()
     {
+        if (lines == null || index >= lines.Length)
+        {
+            if (speakerNameText != null)
+                speakerNameText.gameObject.SetActive(false);
+            return;
+        }
+
         if (speakerNameText != null)
         {
             if (!string.IsNullOrEmpty(lines[index].speaker))
@@ -88,8 +108,10 @@ public class DialogueManager : MonoBehaviour
     // types out dialogue in typewriter effect
     IEnumerator TypeLine()
     {
-        isTyping = true;
+        if (lines == null || index >= lines.Length)
+            yield break;
 
+        isTyping = true;
         foreach (char c in lines[index].text.ToCharArray())
         {
             textComponent.text += c;
@@ -99,13 +121,16 @@ public class DialogueManager : MonoBehaviour
             }
             yield return new WaitForSeconds(textSpeed);
         }
-
+        continueIcon.SetActive(true);
         isTyping = false;
     }
 
     // move to next line
     void NextLine()
     {
+        if (lines == null || index >= lines.Length)
+            return;
+
         if (index < lines.Length - 1)
         {
             index++;
@@ -120,6 +145,7 @@ public class DialogueManager : MonoBehaviour
                 speakerNameText.text = string.Empty;
                 speakerNameText.gameObject.SetActive(false);
             }
+            continueIcon.SetActive(false);
             dialogueBox.SetActive(false);
             onDialogueComplete?.Invoke();
         }
