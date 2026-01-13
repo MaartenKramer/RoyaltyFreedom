@@ -97,6 +97,11 @@ public class DialogueManager : MonoBehaviour
             {
                 speakerNameText.text = lines[index].speaker;
                 speakerNameText.gameObject.SetActive(true);
+
+                if (typeAudioSource != null)
+                {
+                    typeAudioSource.pitch = (lines[index].speaker == "Dawn") ? 1.5f : 0.5f;
+                }
             }
             else
             {
