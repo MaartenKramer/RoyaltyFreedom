@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: has an error and shoots out a stack of papers
   damage: 1
   damageType: 3
+  animationName: Papers
   comboSequence: 

@@ -16,5 +16,5 @@ MonoBehaviour:
   flavorText: prints papers asking politely to cease combat
   damage: 0
   damageType: 0
-  animationName: 
+  animationName: Papers
   comboSequence: 

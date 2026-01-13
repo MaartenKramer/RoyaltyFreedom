@@ -7,8 +7,8 @@ public class TutorialAltProgress : MonoBehaviour
     public GameObject PrinterFire;
     public AudioSource printerAudio;
     public AudioClip printExplodeSound;
-
     public GameObject dawnUI;
+    public GameObject doorTrigger;
 
     private bool exploded = false;
 
@@ -18,6 +18,7 @@ public class TutorialAltProgress : MonoBehaviour
         {
             dawnUI.SetActive(true);
             PrinterFire.SetActive(true);
+            doorTrigger.SetActive(true);
         }
     }
 

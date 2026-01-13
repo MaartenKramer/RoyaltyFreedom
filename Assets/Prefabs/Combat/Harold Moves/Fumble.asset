@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fumble
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   attackName: Fumble
-  flavorText: fumbles their attack
+  flavorText: fumbles his attack
   damage: 2
   damageType: 0
   animationName: Fumble
