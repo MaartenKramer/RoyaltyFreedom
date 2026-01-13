@@ -16,5 +16,5 @@ MonoBehaviour:
   flavorText: flashes a laser pointer onto its sensor
   damage: 9999
   damageType: 2
-  animationName: Electronic1
+  animationName: LaserPointer
   comboSequence: DDD

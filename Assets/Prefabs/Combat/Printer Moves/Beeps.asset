@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: lets out a distressed beep
   damage: 0
   damageType: 0
+  animationName: Beep
   comboSequence: 
