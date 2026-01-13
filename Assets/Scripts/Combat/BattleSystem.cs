@@ -226,13 +226,12 @@ public class BattleSystem : MonoBehaviour
 
         yield return StartCoroutine(MoveUnit(enemyUnit.transform, enemyOriginalPos + Vector3.left * moveDistance));
 
-        playerAnim.Play("Hurt");
-
         if (!string.IsNullOrEmpty(chosenAttack.animationName))
         {
             enemyAnim.Play(chosenAttack.animationName);
         }
 
+        playerAnim.Play("Hurt");
 
         float damageVariety = Random.Range(0.9f, 1.1f);
         int finalDamage = Mathf.RoundToInt((chosenAttack.damage + enemyUnit.attack) * damageVariety);
@@ -386,7 +385,7 @@ public class BattleSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Attack successfulCombo = null;
-        int successfulIndex = 9;
+        int successfulIndex = -1;
 
         for (int i = 0; i <= 2; i++)
         {
@@ -406,7 +405,7 @@ public class BattleSystem : MonoBehaviour
                 break;
         }
 
-        if (successfulCombo != null && successfulIndex != 9)
+        if (successfulCombo != null && successfulIndex != -1)
         {
             string preCombo = currentCombo.Substring(0, successfulIndex);
             string combo = currentCombo.Substring(successfulIndex, 3);
