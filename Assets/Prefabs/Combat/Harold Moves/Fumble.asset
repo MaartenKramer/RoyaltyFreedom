@@ -16,4 +16,5 @@ MonoBehaviour:
   flavorText: fumbles their attack
   damage: 2
   damageType: 0
+  animationName: Fumble
   comboSequence: 

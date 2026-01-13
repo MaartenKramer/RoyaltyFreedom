@@ -3199,7 +3199,7 @@ Transform:
   m_GameObject: {fileID: 377498384}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.81, y: 0, z: -10.5}
+  m_LocalPosition: {x: -3.81, y: 0.3, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8174,6 +8174,12 @@ MonoBehaviour:
   dialDefense: 1
   typeAudioSource: {fileID: 1563408514}
   typeSound: {fileID: 8300000, guid: 07b1cf1d13ca3e647a2fed77616dc7a9, type: 3}
+  comboFound: {fileID: 0}
+  effectiveAnim: {fileID: 0}
+  moveDistance: 2
+  moveSpeed: 5
+  effectiveHider: {fileID: 0}
+  ineffectiveHider: {fileID: 0}
 --- !u!4 &1656995962
 Transform:
   m_ObjectHideFlags: 0
