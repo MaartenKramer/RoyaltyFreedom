@@ -48,6 +48,9 @@ public class BattleSystem : MonoBehaviour
     public AudioSource typeAudioSource;
     public AudioClip typeSound;
     public AudioSource comboFound;
+    public AudioSource combatMusic;
+    public AudioSource combatWin;
+    public AudioSource combatLose;
 
     private Animator playerAnim;
     private Animator enemyAnim;
@@ -258,44 +261,6 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator EndBattle()
-    {
-        HealBG.SetActive(false);
-        AttackBG.SetActive(false);
-
-        yield return StartCoroutine(CheckForDialogue(state));
-
-        if (state == BattleState.WON)
-        {
-            yield return StartCoroutine(TypeCombatText("You won the battle!"));
-        }
-        else if (state == BattleState.LOST)
-        {
-            yield return StartCoroutine(TypeCombatText("You were defeated."));
-        }
-
-        yield return WaitForTyping();
-        yield return new WaitForSeconds(1f);
-
-        if (enemyUnit.unitName == "Harold")
-        {
-            Progress.Instance.flags.Add("Harold_Defeated");
-            SceneManager.LoadScene("Hub");
-        }
-        else if (enemyUnit.unitName == "Seth Garth")
-        {
-            SceneManager.LoadScene("RightHall");
-        }
-        else if (enemyUnit.unitName == "Printer 335")
-        {
-            Progress.Instance.flags.Add("PrinterDies");
-            SceneManager.LoadScene("PostPrinterCutscene");
-        }
-        else
-        {
-            SceneManager.LoadScene("Tutorial");
-        }
-    }
 
     void PlayerTurn()
     {
@@ -530,6 +495,53 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator EndBattle()
+    {
+        HealBG.SetActive(false);
+        AttackBG.SetActive(false);
+
+        combatMusic.Stop();
+
+        if (state == BattleState.WON)
+        {
+            enemyAnim.Play("Lost");
+            combatWin.Play();
+            yield return StartCoroutine(TypeCombatText("Dawn won the battle!"));
+            
+            WaitForTyping();
+            yield return new WaitForSeconds(2f);
+
+            yield return StartCoroutine(CheckForDialogue(state));
+
+            if (enemyUnit.unitName == "Harold")
+            {
+                Progress.Instance.flags.Add("Harold_Defeated");
+                SceneFader.Instance.TransitionToScene("LeftHall", "HaroldDefeated");
+            }
+            else if (enemyUnit.unitName == "Printer 335")
+            {
+                Progress.Instance.flags.Add("PrinterDies");
+                SceneManager.LoadScene("PostPrinterCutscene");
+            }
+            else
+            {
+                SceneManager.LoadScene("Tutorial");
+            }
+        }
+        else if (state == BattleState.LOST)
+        {
+            playerAnim.Play("Lost");
+            combatLose.Play();
+            yield return StartCoroutine(TypeCombatText("You were defeated..."));
+
+            WaitForTyping();
+
+            yield return new WaitForSeconds(5.5f);
+
+            SceneFader.Instance.TransitionToScene(SceneManager.GetActiveScene().name, "");
+        }
+    }
+
     IEnumerator MoveUnit(Transform unit, Vector3 targetPos)
     {
         while (Vector3.Distance(unit.position, targetPos) > 0.01f)
@@ -543,7 +555,6 @@ public class BattleSystem : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.continueIcon != null)
         {

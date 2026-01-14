@@ -283,7 +283,7 @@ MonoBehaviour:
     - speaker: Harold
       text: Best flee now while you still have a chance.
     hasTriggered: 0
-  - turnNumber: 3
+  - turnNumber: 4
     triggerState: 1
     dialogue:
     - speaker: Harold
@@ -295,7 +295,9 @@ MonoBehaviour:
     triggerState: 4
     dialogue:
     - speaker: Harold
-      text: Wait! Wait! Truce!
+      text: Wait! Wait!
+    - speaker: Harold
+      text: T-T-Timeout!
     hasTriggered: 0
   - turnNumber: 1
     triggerState: 3
@@ -339,6 +341,20 @@ MonoBehaviour:
       text: And each foe is weak and strong against something different.
     - speaker: Janitor Ben
       text: Try and figure out what works best for some extra oomph!
+    hasTriggered: 0
+  - turnNumber: 3
+    triggerState: 1
+    dialogue:
+    - speaker: Dawn
+      text: Hey, jerk!
+    - speaker: Dawn
+      text: Didn't your mom ever teach you NOT to hit girls?!
+    - speaker: Harold
+      text: The only thing I'm hitting is my MILESTONES!
+    - speaker: Harold
+      text: ...
+    - speaker: Harold
+      text: ...And you, technically speaking.
     hasTriggered: 0
 --- !u!1 &6044830471226198980
 GameObject:
