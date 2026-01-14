@@ -10,7 +10,7 @@ public class BattleEncounter : MonoBehaviour
         if (other.CompareTag("Player") && enemyIndex != 2)
         {
             BattleData.enemyIndex = enemyIndex;
-            SceneManager.LoadScene("LunCombat");
+            SceneManager.LoadScene("LunCombat3");
            
         }
 
