@@ -95,6 +95,7 @@ public class SceneFader : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        yield return new WaitForSeconds(0.2f);
         float timer = 0;
         Color startColor = fadeImage.color;
         startColor.a = 1;
@@ -103,7 +104,7 @@ public class SceneFader : MonoBehaviour
 
         while (timer < 1)
         {
-            timer += Time.deltaTime * fadeSpeed;
+            timer += Time.deltaTime * (fadeSpeed);
             fadeImage.color = Color.Lerp(startColor, endColor, timer);
             yield return null;
         }

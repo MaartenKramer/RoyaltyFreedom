@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 7
   damageType: 3
   animationName: Slash1
+  attackSound: {fileID: 8300000, guid: 93c96649faae73949bf955704469b942, type: 3}
   comboSequence: SSS

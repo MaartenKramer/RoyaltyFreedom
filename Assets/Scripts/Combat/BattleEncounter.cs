@@ -1,23 +1,30 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum EnemyChoice
+{
+    Printer,
+    Harold
+}
+
 public class BattleEncounter : MonoBehaviour
 {
-    public int enemyIndex;
+
+
+    public EnemyChoice enemyChoice;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && enemyIndex != 2)
+
+        if (other.CompareTag("Player") && enemyChoice == EnemyChoice.Printer)
         {
-            BattleData.enemyIndex = enemyIndex;
-            SceneManager.LoadScene("LunCombat");
-           
+            SceneFader.Instance.TransitionToScene("TutRoomCombat", "");
+
         }
 
-       else
+        else if (other.CompareTag("Player") && enemyChoice == EnemyChoice.Harold)
         {
-            BattleData.enemyIndex = enemyIndex;
-            SceneManager.LoadScene("TutRoomCombat");
+            SceneFader.Instance.TransitionToScene("LeftHallCombat", "");
 
         }
     }

@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 6
   damageType: 0
   animationName: Strike
+  attackSound: {fileID: 8300000, guid: 0f79869a59fecdc48b637296d4910150, type: 3}
   comboSequence: 

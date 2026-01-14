@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 9999
   damageType: 2
   animationName: LaserPointer
+  attackSound: {fileID: 8300000, guid: ef6665f523ae1bc4998c26ddba5c72cc, type: 3}
   comboSequence: DDD

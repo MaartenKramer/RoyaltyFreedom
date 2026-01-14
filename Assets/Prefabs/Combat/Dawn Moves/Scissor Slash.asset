@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 12
   damageType: 3
   animationName: Slash2
+  attackSound: {fileID: 8300000, guid: a776f51909ae08a4fb2afbf997058c66, type: 3}
   comboSequence: SSW

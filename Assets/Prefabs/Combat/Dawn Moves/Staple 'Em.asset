@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 12
   damageType: 1
   animationName: Piercing2
+  attackSound: {fileID: 8300000, guid: 681744ef46dbe564ea98391ea726cbb8, type: 3}
   comboSequence: WWA

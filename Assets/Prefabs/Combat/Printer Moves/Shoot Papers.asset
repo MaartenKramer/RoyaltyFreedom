@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 1
   damageType: 3
   animationName: Papers
+  attackSound: {fileID: 8300000, guid: 7b0b215eab5b4464d8c44d08f9b1b757, type: 3}
   comboSequence: 

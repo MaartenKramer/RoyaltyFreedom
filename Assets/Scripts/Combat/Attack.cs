@@ -19,6 +19,7 @@ public class Attack : ScriptableObject
 
     [Header("Animation")]
     public string animationName;
+    public AudioClip attackSound;
 
     [Header("Player only")]
     public string comboSequence;

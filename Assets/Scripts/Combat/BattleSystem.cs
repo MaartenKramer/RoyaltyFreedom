@@ -47,10 +47,18 @@ public class BattleSystem : MonoBehaviour
     [Header("Audio")]
     public AudioSource typeAudioSource;
     public AudioClip typeSound;
+    public AudioClip healSound;
+    public AudioClip wSound;
+    public AudioClip aSound;
+    public AudioClip sSound;
+    public AudioClip dSound;
+    public AudioSource dialSound;
+    public AudioSource attackSound;
     public AudioSource comboFound;
     public AudioSource combatMusic;
     public AudioSource combatWin;
     public AudioSource combatLose;
+    
 
     private Animator playerAnim;
     private Animator enemyAnim;
@@ -86,7 +94,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
-            if (currentCombo.Length >= 5)
+            if (currentCombo.Length == 5)
                 return;
 
             bool keyPressed = false;
@@ -95,13 +103,14 @@ public class BattleSystem : MonoBehaviour
             {
                 currentCombo += "W";
                 playerAnim.Play("DialW");
-                enemyAnim.Play("Hurt");
+                dialSound.PlayOneShot(wSound);
                 keyPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 currentCombo += "A";
                 playerAnim.Play("DialA");
+                dialSound.PlayOneShot(aSound);
                 enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
@@ -109,6 +118,7 @@ public class BattleSystem : MonoBehaviour
             {
                 currentCombo += "S";
                 playerAnim.Play("DialS");
+                dialSound.PlayOneShot(sSound);
                 enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
@@ -116,6 +126,7 @@ public class BattleSystem : MonoBehaviour
             {
                 currentCombo += "D";
                 playerAnim.Play("DialD");
+                dialSound.PlayOneShot(dSound);
                 enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
@@ -132,6 +143,11 @@ public class BattleSystem : MonoBehaviour
             {
                 StartCoroutine(ComboExecute());
             }
+        }
+
+        if (currentCombo.Length > 5)
+        {
+            currentCombo = currentCombo.Substring(0, 5);
         }
     }
 
@@ -234,6 +250,8 @@ public class BattleSystem : MonoBehaviour
             enemyAnim.Play(chosenAttack.animationName);
         }
 
+        attackSound.PlayOneShot(chosenAttack.attackSound);
+
         playerAnim.Play("Hurt");
 
         float damageVariety = Random.Range(0.9f, 1.1f);
@@ -279,11 +297,12 @@ public class BattleSystem : MonoBehaviour
     {
         HealBG.SetActive(true);
         playerAnim.Play("Heal");
+        attackSound.PlayOneShot(healSound);
 
         playerUnit.Heal(50);
         playerHUD.SetHP(playerUnit.currentHP);
 
-        StartCoroutine(TypeCombatText("You take a bite from an energy bar"));
+        StartCoroutine(TypeCombatText("You take a bite from an energy bar."));
 
         yield return WaitForTyping();
 
@@ -400,6 +419,8 @@ public class BattleSystem : MonoBehaviour
 
             StartCoroutine(TypeCombatText(playerUnit.unitName + " " + successfulCombo.flavorText + "!"));
 
+            attackSound.PlayOneShot(successfulCombo.attackSound);
+
             yield return new WaitForSeconds(0.8f);
 
 
@@ -504,7 +525,9 @@ public class BattleSystem : MonoBehaviour
 
         if (state == BattleState.WON)
         {
+            playerAnim.Play("Win");
             enemyAnim.Play("Lost");
+            combatMusic.Stop();
             combatWin.Play();
             yield return StartCoroutine(TypeCombatText("Dawn won the battle!"));
             
@@ -512,6 +535,8 @@ public class BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             yield return StartCoroutine(CheckForDialogue(state));
+
+            dialogueText.text = "";
 
             if (enemyUnit.unitName == "Harold")
             {
@@ -521,7 +546,7 @@ public class BattleSystem : MonoBehaviour
             else if (enemyUnit.unitName == "Printer 335")
             {
                 Progress.Instance.flags.Add("PrinterDies");
-                SceneManager.LoadScene("PostPrinterCutscene");
+                SceneFader.Instance.TransitionToScene("PostPrinterCutscene" ,"");
             }
             else
             {
@@ -531,6 +556,7 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             playerAnim.Play("Lost");
+            combatMusic.Stop();
             combatLose.Play();
             yield return StartCoroutine(TypeCombatText("You were defeated..."));
 

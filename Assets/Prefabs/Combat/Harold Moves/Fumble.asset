@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 2
   damageType: 0
   animationName: Fumble
+  attackSound: {fileID: 8300000, guid: 853c9e18a120e03409fbe0908c002484, type: 3}
   comboSequence: 

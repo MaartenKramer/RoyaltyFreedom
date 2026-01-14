@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 9
   damageType: 1
   animationName: Coffee
+  attackSound: {fileID: 8300000, guid: 63ac677586e54d448a96bec4d6faba58, type: 3}
   comboSequence: 

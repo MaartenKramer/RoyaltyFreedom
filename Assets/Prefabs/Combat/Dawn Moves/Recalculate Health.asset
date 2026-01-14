@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 12
   damageType: 2
   animationName: Electronic2
+  attackSound: {fileID: 8300000, guid: 1b3bd79527c0acc4c8bf3706f5741366, type: 3}
   comboSequence: DDS

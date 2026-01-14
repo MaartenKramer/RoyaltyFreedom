@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 7
   damageType: 0
   animationName: Blunt1
+  attackSound: {fileID: 8300000, guid: 029601c06b128724f8709a838002069c, type: 3}
   comboSequence: AAA

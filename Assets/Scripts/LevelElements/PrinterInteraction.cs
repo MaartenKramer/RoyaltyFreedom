@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using System.IO.Pipes;
 
 public class PrinterInteraction : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class PrinterInteraction : MonoBehaviour
     public GameObject desk;
     public AudioSource printerAudio;
     public AudioSource deskAudio;
+    public AudioSource music;
     public AudioClip printSound;
     public AudioClip printBrokenSound;
+
+    [Header("Him")]
+    public GameObject person;
+    public GameObject personTurned;
 
     [Header("Settings")]
     public int deskRequirement = 5;
@@ -74,6 +80,7 @@ public class PrinterInteraction : MonoBehaviour
                 else if (!printerBroken)
                 {
                     BreakPrinter();
+                    music.Stop();
                 }
             }
         }
@@ -128,12 +135,24 @@ public class PrinterInteraction : MonoBehaviour
                 deskCollider.enabled = false;
             }
 
-            if (deskAudio != null)
-                deskAudio.Play();
+            StartCoroutine(ThankYou());
         }
 
         Debug.Log("Cycle 1 Complete. Starting bullshit!");
         questTitle.SetText("Printing Task 2579");
         questText.SetText("- Find Printer 335 and print 5 pages.");
+    }
+
+    public IEnumerator ThankYou()
+    {
+        person.SetActive(false);
+        personTurned.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        if (deskAudio != null)
+            deskAudio.Play();
+        yield return new WaitForSeconds(1.0f);
+        person.SetActive(true);
+        personTurned.SetActive(false);
+
     }
 }

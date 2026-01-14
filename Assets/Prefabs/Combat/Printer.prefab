@@ -187,14 +187,26 @@ MonoBehaviour:
   - turnNumber: 3
     triggerState: 1
     dialogue:
+    - speaker: Printer 335
+      text: If you are having trouble with the printing process.
+    - speaker: Printer 335
+      text: Maybe what you need-d-d
+    - speaker: Printer 335
+      text: d-d-d-d-d-d-d-d-d-d-d-d-d-d-d
     - speaker: Dawn
-      text: This is taking too long.
+      text: I wonder...
+    hasTriggered: 0
+  - turnNumber: 4
+    triggerState: 1
+    dialogue:
     - speaker: Dawn
-      text: Unless...
-    - speaker: 
-      text: Dawn had an epiphany!
-    - speaker: 
-      text: Dawn Learned "DDD" Combo!
+      text: Maybe I could try DDD.
+    hasTriggered: 0
+  - turnNumber: -1
+    triggerState: 4
+    dialogue:
+    - speaker: Printer 335
+      text: R-R-Requesting 2 Printing Specialists...
     hasTriggered: 0
 --- !u!1 &7958537502924969795
 GameObject:

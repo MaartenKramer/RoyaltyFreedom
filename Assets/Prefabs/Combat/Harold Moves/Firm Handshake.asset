@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 9
   damageType: 0
   animationName: Handshake
+  attackSound: {fileID: 8300000, guid: 1a072b53372f9a24da9194dea308dc60, type: 3}
   comboSequence: 

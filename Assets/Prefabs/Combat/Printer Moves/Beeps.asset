@@ -17,4 +17,5 @@ MonoBehaviour:
   damage: 0
   damageType: 0
   animationName: Beep
+  attackSound: {fileID: 8300000, guid: d6382f5bdf8218b498b0aa633818614b, type: 3}
   comboSequence: 
