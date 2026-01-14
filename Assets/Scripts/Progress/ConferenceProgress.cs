@@ -1,38 +1,23 @@
 using UnityEngine;
 using TMPro;
 
-public class LeftHallProgress : MonoBehaviour
+public class ConferenceProgress : MonoBehaviour
 {
-    public GameObject regularHarold;
-    public GameObject defeatedHarold;
-    public GameObject fightTrigger;
-
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questText;
 
     void Start()
     {
-        if (Progress.Instance.flags.Contains("Harold_Defeated"))
-        {
-            regularHarold.SetActive(false);
-            defeatedHarold.SetActive(true);
-        }
-        else
-        {
-            regularHarold.SetActive(true);
-            defeatedHarold.SetActive(false);
-        }
-
         if (Progress.Instance.flags.Contains("NeedClearance") && !Progress.Instance.flags.Contains("FindX") && !Progress.Instance.flags.Contains("GotForms"))
         {
             questTitle.SetText("Get a clearance card");
             questText.SetText("- Ask around to see if someone knows how to get a clearance card.");
         }
 
-        if (Progress.Instance.flags.Contains("GotForms") && !Progress.Instance.flags.Contains("FilledInForms"))
+        if (Progress.Instance.flags.Contains("FindX") && !Progress.Instance.flags.Contains("GotForms"))
         {
-            questTitle.SetText("Fill the forms in");
-            questText.SetText("- Go to your desk and fill the clearance forms in.");
+            questTitle.SetText("Get the clearance forms");
+            questText.SetText("- Find X in the converence rooms.");
         }
 
         if (Progress.Instance.flags.Contains("FilledInForms") && !Progress.Instance.flags.Contains("DeliverForms"))
@@ -56,15 +41,10 @@ public class LeftHallProgress : MonoBehaviour
 
     void Update()
     {
-        if (Progress.Instance.flags.Contains("HaroldDialogue1") && !Progress.Instance.flags.Contains("Harold_Defeated"))
+        if (Progress.Instance.flags.Contains("GotForms") && !Progress.Instance.flags.Contains("FilledInForms"))
         {
-            fightTrigger.SetActive(true);
-        }
-
-        if (Progress.Instance.flags.Contains("FindX") && !Progress.Instance.flags.Contains("GotForms"))
-        {
-            questTitle.SetText("Get the clearance forms");
-            questText.SetText("- Find X in the converence rooms.");
+            questTitle.SetText("Fill the forms in");
+            questText.SetText("- Go to your desk and fill the clearance forms in.");
         }
     }
 }
