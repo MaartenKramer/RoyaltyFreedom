@@ -1368,7 +1368,8 @@ MonoBehaviour:
   - speaker: Dawn
     text: H-Hey, hold on!
   - speaker: Dawn
-    text: I can't just go on some kind of Company-wide revolution!
+    text: I don't know what you're expecting from me, but I'm not the right fit for
+      whatever you're cooking!
   - speaker: Dawn
     text: At most I just want to finally quit this job and get out.
   - speaker: Janitor Ben
@@ -1382,7 +1383,7 @@ MonoBehaviour:
   - speaker: Janitor Ben
     text: Ha! Now there is that fire I was looking for!
   - speaker: Janitor Ben
-    text: Guess you should start looking for your boss Roberts.
+    text: Guess you should start looking for your boss, Roberts.
   - speaker: Janitor Ben
     text: He may just be a Floor Manager, but he probably has the credentials needed.
   - speaker: Janitor Ben

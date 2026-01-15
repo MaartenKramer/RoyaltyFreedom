@@ -5817,6 +5817,7 @@ Transform:
   m_Children:
   - {fileID: 9222565428253965378}
   - {fileID: 1299789745}
+  - {fileID: 1557463113}
   m_Father: {fileID: 465413634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &983514474
@@ -7251,7 +7252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.67
+      value: -8.24
       objectReference: {fileID: 0}
     - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7324,13 +7325,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299789748}
   m_SourcePrefab: {fileID: 100100000, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
 --- !u!4 &1299789745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
   m_PrefabInstance: {fileID: 1299789744}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299789746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4384361371610260292, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 1299789744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299789747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 1299789744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1299789748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299789747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9e5cc476bbc5048bbcd5bebc63f593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speakable
+  dialogue:
+  - speaker: Hulda
+    text: Erm... Excuse me? I'm kinda in the middle of something.
+  - speaker: Dawn
+    text: middle of what?
+  - speaker: Hulda
+    text: Waiting, duh!
+  requiredFlags: []
+  blockedByFlags:
+  - NeedClearance
+  flagsToSet: []
+  autoTrigger: 0
+  interactionBubble: {fileID: 1299789746}
 --- !u!1001 &1302422272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8075,6 +8114,10 @@ PrefabInstance:
     - target: {fileID: 6666213055503952740, guid: 60ec02b1ae895594889a15e8f945da2b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906547381946036339, guid: 60ec02b1ae895594889a15e8f945da2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.27
       objectReference: {fileID: 0}
     - target: {fileID: 7250547488814702754, guid: 60ec02b1ae895594889a15e8f945da2b, type: 3}
       propertyPath: m_IsActive
@@ -9330,6 +9373,218 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7447595269485555691, guid: 502f73b3d3aeb1a49a37b318fac44d39, type: 3}
   m_PrefabInstance: {fileID: 638413484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1557463110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 981810613}
+    m_Modifications:
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: flagsToSet.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: 'flagsToSet.Array.data[0]'
+      value: OliverTalked
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: requiredFlags.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: blockedByFlags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[0].text
+      value: Hey, can I ask you a question?
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[1].text
+      value: Shoot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[2].text
+      value: Have you, like, ever seen the CEO?
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[3].text
+      value: No? Why do you ask?
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[4].text
+      value: Isn't that kinda weird?
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[5].text
+      value: The Floor Managers make their presence known, that's for sure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[6].text
+      value: But with the CEO it's nothing. Nadah. Zilch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[7].text
+      value: It's like the man is a ghost.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[8].text
+      value: But with the CEO it's nothing. Nadah. Zilch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: 'blockedByFlags.Array.data[0]'
+      value: OliverTalked
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[0].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[1].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[2].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[3].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[4].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[5].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[6].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[7].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[8].speaker
+      value: Coworker Oliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.371708
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.769409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665880752427556289, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 703cacff7910e1340aeeeb314b04d990, type: 3}
+    - target: {fileID: 2650103764511085414, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650103764511085414, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384361371610260292, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227058163983886723, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: m_Name
+      value: Oliver
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557463112}
+  m_SourcePrefab: {fileID: 100100000, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+--- !u!1 &1557463111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 1557463110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557463112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557463111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9e5cc476bbc5048bbcd5bebc63f593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speakable
+  dialogue:
+  - speaker: Coworker Oliver
+    text: ...
+  requiredFlags:
+  - OliverTalked
+  blockedByFlags: []
+  flagsToSet: []
+  autoTrigger: 0
+  interactionBubble: {fileID: 1557463114}
+--- !u!4 &1557463113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 1557463110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1557463114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4384361371610260292, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 1557463110}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568909381
 GameObject:

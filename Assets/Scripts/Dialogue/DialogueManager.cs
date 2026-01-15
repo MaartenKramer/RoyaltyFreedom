@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueLine[] lines;
     private int index;
     private Action onDialogueComplete;
+    private float inputCooldown = 0f;
 
     [Header("Audio")]
     public AudioSource typeAudioSource;
@@ -34,7 +35,6 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
-    // checks if dialogue is currently running
     public bool IsDialogueActive()
     {
         return dialogueBox.activeSelf;
@@ -42,6 +42,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if (inputCooldown > 0f)
+        {
+            inputCooldown -= Time.deltaTime;
+            return;
+        }
+
         if (dialogueBox.activeSelf && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
         {
             if (lines == null || index >= lines.Length)
@@ -62,7 +68,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // initializes dialogue
     public void ShowDialogue(DialogueLine[] newLines, Action onComplete = null)
     {
         if (newLines == null || newLines.Length == 0)
@@ -78,6 +83,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
         textComponent.text = string.Empty;
         continueIcon.SetActive(false);
+        inputCooldown = 0.2f;
         UpdateSpeakerName();
         StartCoroutine(TypeLine());
     }
@@ -102,12 +108,10 @@ public class DialogueManager : MonoBehaviour
                 {
                     typeAudioSource.pitch = 1.5f;
                 }
-
                 else if (lines[index].speaker == "Printer 335")
                 {
                     typeAudioSource.pitch = 3f;
                 }
-
                 else
                 {
                     typeAudioSource.pitch = 0.5f;
@@ -120,7 +124,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // types out dialogue in typewriter effect
     IEnumerator TypeLine()
     {
         if (lines == null || index >= lines.Length)
@@ -151,7 +154,6 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
-    // move to next line
     void NextLine()
     {
         if (lines == null || index >= lines.Length)

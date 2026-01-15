@@ -21,34 +21,73 @@ public class Speakable : MonoBehaviour
 
     private bool playerInRange = false;
     private bool hasTriggered = false;
-    private bool cooldown = false;
+    private static float globalDialogueCooldown = 0f;
 
     public GameObject interactionBubble;
 
     void Update()
     {
-        if (playerInRange && !DialogueManager.Instance.IsDialogueActive() && CanTriggerDialogue() && !cooldown)
+        // Reduce global cooldown
+        if (globalDialogueCooldown > 0f)
         {
+            globalDialogueCooldown -= Time.deltaTime;
+        }
+
+        // Don't allow triggering when dialogue is active
+        if (DialogueManager.Instance.IsDialogueActive())
+        {
+            if (interactionBubble != null)
+                interactionBubble.SetActive(false);
+            return;
+        }
+
+        if (playerInRange && CanTriggerDialogue() && !hasTriggered)
+        {
+            bool canActuallyTrigger = globalDialogueCooldown <= 0f;
+
             if (autoTrigger)
             {
-                if (!hasTriggered)
+                if (canActuallyTrigger)
                 {
                     DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
                     hasTriggered = true;
                 }
             }
+            else
+            {
+                if (interactionBubble != null)
+                    interactionBubble.SetActive(true);
 
-            else {
-
-                interactionBubble.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                if (canActuallyTrigger && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
                 {
                     DialogueManager.Instance.ShowDialogue(dialogue, OnDialogueComplete);
-                    cooldown = true;
-                    interactionBubble.SetActive(false);
+                    hasTriggered = true;
+                    if (interactionBubble != null)
+                        interactionBubble.SetActive(false);
                 }
             }
+        }
+        else if (playerInRange && interactionBubble != null)
+        {
+            // Only hide bubble if NO other Speakable on this GameObject can trigger
+            bool anyCanTrigger = false;
+            foreach (Speakable speakable in GetComponents<Speakable>())
+            {
+                if (speakable.playerInRange && speakable.CanTriggerDialogue() && !speakable.hasTriggered)
+                {
+                    anyCanTrigger = true;
+                    break;
+                }
+            }
+
+            if (!anyCanTrigger)
+            {
+                interactionBubble.SetActive(false);
+            }
+        }
+        else if (interactionBubble != null)
+        {
+            interactionBubble.SetActive(false);
         }
     }
 
@@ -80,13 +119,7 @@ public class Speakable : MonoBehaviour
             Progress.Instance.flags.Add(flag);
         }
 
-        StartCoroutine(ResetTriggerCooldown());
-    }
-
-    IEnumerator ResetTriggerCooldown()
-    {
-        yield return new WaitForSeconds(0.3f);
-        cooldown = false;
+        globalDialogueCooldown = 0.5f;
     }
 
     void OnTriggerEnter(Collider other)
@@ -104,7 +137,8 @@ public class Speakable : MonoBehaviour
         {
             playerInRange = false;
             hasTriggered = false;
-            interactionBubble.SetActive(false);
+            if (interactionBubble != null)
+                interactionBubble.SetActive(false);
         }
     }
 }
