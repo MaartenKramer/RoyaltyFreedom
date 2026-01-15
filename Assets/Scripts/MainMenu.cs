@@ -11,4 +11,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneFader.Instance.TransitionToScene(scene, "");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
