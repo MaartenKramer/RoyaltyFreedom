@@ -20836,7 +20836,7 @@ MonoBehaviour:
   skillsButton: {fileID: 2040732987}
   currentCombo: 
   comboDial: {fileID: 1893571798}
-  dialAttack: 4
+  dialAttack: 3
   dialDefense: 1
   typeAudioSource: {fileID: 481222844}
   typeSound: {fileID: 8300000, guid: 07b1cf1d13ca3e647a2fed77616dc7a9, type: 3}

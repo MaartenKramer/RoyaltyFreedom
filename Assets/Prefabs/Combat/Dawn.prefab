@@ -2141,12 +2141,12 @@ MonoBehaviour:
   unitName: Dawn
   combatIntro: 
   unitLevel: 1
-  attack: 3
-  specialAttack: 4
+  attack: 2
+  specialAttack: 5
   defense: 4
   specialDefense: 2
-  maxHP: 250
-  currentHP: 250
+  maxHP: 300
+  currentHP: 300
   weaknessType: 4
   resistantType: 4
   attacks:
