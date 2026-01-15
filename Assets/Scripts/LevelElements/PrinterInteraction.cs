@@ -25,12 +25,14 @@ public class PrinterInteraction : MonoBehaviour
     public GameObject questUI;
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questText;
+    public GameObject printIcon;
 
     private int printedItems = 0;
     private bool playerInside = false;
     private bool interactionCooldown = false;
     private bool printerBroken = false;
     private bool firstCycleDone = false;
+    private bool cycleTransition = false;
 
     private void Start()
     {
@@ -61,6 +63,15 @@ public class PrinterInteraction : MonoBehaviour
 
     void Update()
     {
+        if (playerInside && !interactionCooldown && !cycleTransition) {
+            printIcon.SetActive(true);
+        }
+
+        else
+        {
+            printIcon.SetActive(false);
+        }
+
         if (playerInside && Input.GetKeyDown(KeyCode.E) && !interactionCooldown)
         {
             if (!firstCycleDone)
@@ -87,9 +98,11 @@ public class PrinterInteraction : MonoBehaviour
 
         if (!firstCycleDone && printedItems >= deskRequirement && desk != null)
         {
+            cycleTransition = true;
             desk.GetComponent<BoxCollider>().enabled = true;
             questText.SetText("- Deliver the pages to your coworker on the first row at the fourth desk.");
         }
+
     }
 
     IEnumerator PrintCooldown()
@@ -138,6 +151,7 @@ public class PrinterInteraction : MonoBehaviour
             StartCoroutine(ThankYou());
         }
 
+        cycleTransition = false;
         Debug.Log("Cycle 1 Complete. Starting bullshit!");
         questTitle.SetText("Printing Task 2579");
         questText.SetText("- Find Printer 335 and print 5 pages.");
@@ -147,7 +161,7 @@ public class PrinterInteraction : MonoBehaviour
     {
         person.SetActive(false);
         personTurned.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         if (deskAudio != null)
             deskAudio.Play();
         yield return new WaitForSeconds(1.0f);

@@ -134,6 +134,17 @@ public class DialogueManager : MonoBehaviour
             {
                 typeAudioSource.PlayOneShot(typeSound);
             }
+
+            if (c == '.' || c == '!' || c == '?')
+            {
+                yield return new WaitForSeconds(0.2f);
+            }
+
+            if (c == ',')
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
         continueIcon.SetActive(true);

@@ -3268,7 +3268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Sigh* Guess I better get to it then.'
+  m_text: I mean... Let's do our best, yeah!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -5130,7 +5130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are not even scraping above 90 percent efficiency!
+  m_text: You are not even scraping above 85 percent efficiency!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -9336,7 +9336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50 Credits?! How am I supposed to pay my rent like this?
+  m_text: '*Sigh* Guess I better get to it then.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -9514,7 +9514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do not let me catch you causing more trouble, understand?
+  m_text: Do not cause any more trouble, understand?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -13002,7 +13002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jerk...
+  m_text: Stuck-up jerk...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -17655,7 +17655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Up until you are reaching your quotas again of course.
+  m_text: Up until you reach your quotas again, of course.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}

@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 public class ClosetProgress : MonoBehaviour
 {
     public GameObject questUI;
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questText;
+
+    public AudioSource closetMusic;
 
     void Start()
     {
@@ -48,6 +51,12 @@ public class ClosetProgress : MonoBehaviour
         {
             questTitle.SetText("Talk to Seth again");
             questText.SetText("- Talk to Seth in the manager's office.");
+        }
+
+        if (!Progress.Instance.flags.Contains("Harold_Defeated"))
+        {
+            closetMusic.Play();
+
         }
     }
 

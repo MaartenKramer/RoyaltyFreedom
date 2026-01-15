@@ -6026,7 +6026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I'm... back to my old self...
+  m_text: I'm back to my old self!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -6894,7 +6894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The heck was that?
+  m_text: Huh?!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -7886,7 +7886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Well mostly anyways.
+  m_text: ...Well mostly anyways.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -10461,7 +10461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: It's like this place doesn't even see me as a person.
+  m_text: This place doesn't even see me as a person.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
