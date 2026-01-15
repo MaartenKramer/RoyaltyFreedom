@@ -106,7 +106,7 @@ public class BattleSystem : MonoBehaviour
                 dialSound.PlayOneShot(wSound);
                 keyPressed = true;
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.A))
             {
                 currentCombo += "A";
                 playerAnim.Play("DialA");
@@ -114,7 +114,7 @@ public class BattleSystem : MonoBehaviour
                 enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.S))
             {
                 currentCombo += "S";
                 playerAnim.Play("DialS");
@@ -122,7 +122,7 @@ public class BattleSystem : MonoBehaviour
                 enemyAnim.Play("Hurt");
                 keyPressed = true;
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKeyDown(KeyCode.D))
             {
                 currentCombo += "D";
                 playerAnim.Play("DialD");
@@ -420,7 +420,7 @@ public class BattleSystem : MonoBehaviour
 
 
 
-            enemyAnim.Play("ComboHurt");
+            enemyAnim.Play("Hurt");
 
             float damageVariety = Random.Range(0.9f, 1.1f);
             float baseDamage = (successfulCombo.damage + playerUnit.specialAttack) * damageVariety;
@@ -536,7 +536,7 @@ public class BattleSystem : MonoBehaviour
             if (enemyUnit.unitName == "Harold")
             {
                 Progress.Instance.flags.Add("Harold_Defeated");
-                SceneFader.Instance.TransitionToScene("LeftHall", "HaroldDefeated");
+                SceneFader.Instance.TransitionToScene("LeftHall", "Harold_Defeated");
             }
             else if (enemyUnit.unitName == "Printer 335")
             {

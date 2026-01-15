@@ -287,8 +287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- You will have to work 50 hours of overtime in order to have enough credit
-    for rent.'
+  m_text: '- You will have to work /50 HOURS/ overtime to reach minimum balance.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -2653,8 +2652,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"You violated The Company''s Behavioral Guide Act 1, Subsection 5, Point
-    13."'
+  m_text: You violated The Company's Behavioral Guide Act 1, Subsection 5, Point
+    13.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -3458,7 +3457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"You have 3 unread messages from Floor Manager Roberts."'
+  m_text: You have [3] unread messages from Floor Manager Roberts.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -5298,7 +5297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"All costs of repair will be deducted from your next \npaycheck.\""
+  m_text: "All costs of repair will be deducted from your next \npaycheck."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -6016,7 +6015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Personal efficiency dropped below 50 percent.'
+  m_text: '- Personal efficiency dropped below /50 PERCENT/.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -7704,8 +7703,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Employee Dawn Roose has violated the Company's Behavioral Guide for the
-    second time today.
+  m_text: Dawn Roose will be fined for violating the Company's Behavioral Guide for
+    the second time today.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -9390,7 +9389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"You have received a fine of 350 Company Credit."'
+  m_text: You have received a fine of 350 CC
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -9804,8 +9803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attention! Urgently requesting a Company Printing Specialist to come to
-    Printer 335.
+  m_text: Attention! Requesting a Company Printing Specialist to Printer 335.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -11601,7 +11599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Printer 335 is unavailable.'
+  m_text: '- /PRINTER 335/ is unavailable.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -12247,7 +12245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"You have 15 unread messages from Human Resources."'
+  m_text: You have [15] unread messages from Human Resources.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -17668,7 +17666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Not having a house is a breach of The Company''s Behavioral Guide.'
+  m_text: '- /LACKING RESIDENCE/ is a breach of The Company''s Behavioral Guide.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -23178,7 +23176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Your Rent Plan is impossible.'
+  m_text: '- Your Rent Plan is /IMPOSSIBLE/.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
   m_sharedMaterial: {fileID: 3559874389317693466, guid: 820c5cc84fbadbc41add4999bf0ec728, type: 2}
@@ -24642,7 +24640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reason: "Fought Printer 335".'
+  m_text: 'Reason: "Destruction of property".'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -25482,7 +25480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Intercom Message
+  m_text: Intercom
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}

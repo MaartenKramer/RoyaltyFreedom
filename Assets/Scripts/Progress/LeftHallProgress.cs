@@ -10,12 +10,25 @@ public class LeftHallProgress : MonoBehaviour
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questText;
 
+    public AudioSource overworldMusic;
+
     void Start()
     {
+        GameObject musicObject = GameObject.Find("OverworldMusic"); // Replace with your actual GameObject name
+        if (musicObject != null)
+        {
+            overworldMusic = musicObject.GetComponent<AudioSource>();
+        }
+
         if (Progress.Instance.flags.Contains("Harold_Defeated"))
         {
             regularHarold.SetActive(false);
             defeatedHarold.SetActive(true);
+
+            if (overworldMusic != null && !overworldMusic.isPlaying)
+            {
+                overworldMusic.Play();
+            }
         }
         else
         {

@@ -837,7 +837,6 @@ Transform:
   - {fileID: 2058330885}
   - {fileID: 2078986945}
   - {fileID: 1565816288}
-  - {fileID: 1855041008}
   m_Father: {fileID: 465413634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &197823895
@@ -2688,6 +2687,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 40a52cbe70d0d7c47918e7b8ff2b4e06, type: 3}
+    - target: {fileID: 556060239616972297, guid: af656296c0841fc41804e242e6256cb7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4971619620503717421, guid: af656296c0841fc41804e242e6256cb7, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2741,7 +2744,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Harold
-    text: Ouwies Im so hurt
+    text: Okay... Let's call it a tie.
+  - speaker: Dawn
+    text: A tie? I kicked your pencil pushing ass!
+  - speaker: Harold
+    text: I only let you win, because I am an empath.
+  - speaker: Dawn
+    text: Whatever, Harold.
+  - speaker: Dawn
+    text: Look I'm sorry if you end up having to do my work.
+  - speaker: Dawn
+    text: But I just can't do this anymore.
+  - speaker: Harold
+    text: It's alright... I know how you feel.
+  - speaker: Harold
+    text: Things are gonna get worse around here before they get better.
+  - speaker: Dawn
+    text: ...
+  - speaker: Harold
+    text: Anyways you can go now, if you want.
+  - speaker: Harold
+    text: I'll just sit here and uhh...
+  - speaker: Harold
+    text: Catch my breath.
   requiredFlags: []
   blockedByFlags:
   - HaroldDialogue2
@@ -3642,7 +3667,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2038808054}
   - {fileID: 1078458791275662335}
   - {fileID: 733569819}
   m_Father: {fileID: 465413634}
@@ -4447,6 +4471,7 @@ MonoBehaviour:
   fightTrigger: {fileID: 1851228489}
   questTitle: {fileID: 1824855674}
   questText: {fileID: 1113746931}
+  overworldMusic: {fileID: 1855041007}
 --- !u!1001 &1095432955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7487,7 +7512,7 @@ GameObject:
   - component: {fileID: 1855041007}
   - component: {fileID: 1855041009}
   m_Layer: 0
-  m_Name: Music
+  m_Name: OverworldMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7505,7 +7530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1689bced864864d4ba7fb1a38da6faa7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
@@ -7599,11 +7624,11 @@ Transform:
   m_GameObject: {fileID: 1855041006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.136841, y: -2.75487, z: 6.592931}
+  m_LocalPosition: {x: 5.7225504, y: 3.33116, z: -14.43707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 184196924}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1855041009
 MonoBehaviour:
@@ -8510,84 +8535,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2038808053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2038808054}
-  - component: {fileID: 2038808056}
-  - component: {fileID: 2038808055}
-  m_Layer: 0
-  m_Name: Intercom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2038808054
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038808053}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.03, y: 1.33, z: -10.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 981810613}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2038808055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038808053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9e5cc476bbc5048bbcd5bebc63f593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Speakable
-  dialogue:
-  - speaker: Intercom Message
-    text: Attention to all employees!
-  - speaker: Intercom Message
-    text: Dawn is Irregular! EW! Get her!
-  requiredFlags: []
-  blockedByFlags:
-  - Intercom1
-  flagsToSet:
-  - Intercom1
-  autoTrigger: 1
-  interactionBubble: {fileID: 0}
---- !u!65 &2038808056
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038808053}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 11.845346, y: 1, z: 6.8177924}
-  m_Center: {x: -2.2838926, y: 0, z: 1.330982}
 --- !u!1 &2058330883
 GameObject:
   m_ObjectHideFlags: 0
@@ -9179,7 +9126,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Harold
-    text: You dare leave!??!
+    text: ...
+  - speaker: Dawn
+    text: ...
+  - speaker: Harold
+    text: ..?
+  - speaker: Harold
+    text: ..!
+  - speaker: Harold
+    text: ROOSE?
+  - speaker: Dawn
+    text: Uhh... Hi, Harold. What's up?
+  - speaker: Harold
+    text: ARE YOU QUIET QUITTING?!
+  - speaker: Harold
+    text: Also did you do something with your hair? It looks quite nice.
+  - speaker: Dawn
+    text: Aww thanks. I like how you trimmed your beard.
+  - speaker: Harold
+    text: Oh really? I use this brand of- Hey don't try and worm your way out of
+      this!
+  - speaker: Harold
+    text: I'm not going to slave away doing both your work AND mine!
   requiredFlags: []
   blockedByFlags: []
   flagsToSet:
@@ -9232,3 +9200,4 @@ SceneRoots:
   - {fileID: 158505159}
   - {fileID: 544056248}
   - {fileID: 1378597308}
+  - {fileID: 1855041008}
