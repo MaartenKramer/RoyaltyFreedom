@@ -10306,7 +10306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.size
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: flagsToSet.Array.size
@@ -10326,11 +10326,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[0].text
-      value: Beep boop forms wow
+      value: Alright... Let's do this.
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[1].text
-      value: Alright thats done. Let's go find Y.
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[2].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[3].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[4].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[5].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[6].text
+      value: Ugh...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[7].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[8].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[9].text
+      value: There. Finally.
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: 'requiredFlags.Array.data[0]'
@@ -10341,11 +10373,59 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[10].text
+      value: Now let's go find that guy so he can approve these.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[11].text
+      value: There. Finally.
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[0].speaker
-      value: Computer
+      value: Dawn
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[1].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[2].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[3].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[4].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[5].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[6].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[7].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[8].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[9].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[10].speaker
+      value: Dawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      propertyPath: dialogue.Array.data[11].speaker
       value: Dawn
       objectReference: {fileID: 0}
     - target: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}

@@ -2718,6 +2718,9 @@ PrefabInstance:
       addedObject: {fileID: 733569821}
     - targetCorrespondingSourceObject: {fileID: 6494962196750026928, guid: af656296c0841fc41804e242e6256cb7, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 733569824}
+    - targetCorrespondingSourceObject: {fileID: 6494962196750026928, guid: af656296c0841fc41804e242e6256cb7, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 733569823}
   m_SourcePrefab: {fileID: 100100000, guid: af656296c0841fc41804e242e6256cb7, type: 3}
 --- !u!4 &733569819 stripped
@@ -2808,23 +2811,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
-  - speaker: Harold
-    text: 'Oh a clearance card? '
-  - speaker: Harold
-    text: You can get the forms from X, I think she's delivering notes to someone
-      giving a presentation.
   - speaker: Dawn
-    text: Where is that?
+    text: Hey, Harold. Can you help me with something?
   - speaker: Harold
-    text: Have you never been to the converence rooms?
+    text: Ow... What do you need, Roose?
+  - speaker: Dawn
+    text: I need a form to go get past Seth.
   - speaker: Harold
-    text: Its at the back of the Hub.
+    text: Oh you can get a form from Hulda. She should be at the conference rooms.
+  - speaker: Dawn
+    text: Alright, thanks!
+  - speaker: Harold
+    text: ...Where is that again?
+  - speaker: Harold
+    text: Just take one of the doors at the north of the Hub.
   requiredFlags:
   - NeedClearance
   blockedByFlags:
   - GotForms
   flagsToSet:
   - FindX
+  autoTrigger: 0
+  interactionBubble: {fileID: 717234215}
+--- !u!114 &733569824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733569820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9e5cc476bbc5048bbcd5bebc63f593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speakable
+  dialogue:
+  - speaker: Harold
+    text: Don't worry about me, I'll be fine.
+  - speaker: Harold
+    text: I think.
+  requiredFlags:
+  - HaroldDialogue2
+  blockedByFlags:
+  - NeedClearance
+  flagsToSet: []
   autoTrigger: 0
   interactionBubble: {fileID: 717234215}
 --- !u!4 &742224233 stripped

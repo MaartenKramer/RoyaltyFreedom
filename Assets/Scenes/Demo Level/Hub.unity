@@ -3926,7 +3926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[0].text
-      value: Oh hey, I see you've got some clearance forms there.
+      value: Excuse me could you give me a Clearance Card? I got the right forms.
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[1].text
@@ -3934,7 +3934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[2].text
-      value: Looks good! Just put them on my desk and grab yourself a clearance card.
+      value: Looks good! Just put them on my desk and grab yourself a Card.
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[3].text
@@ -3961,23 +3961,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[0].speaker
-      value: Y
+      value: Dawn
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[1].speaker
-      value: Y
+      value: Yanique
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[2].speaker
-      value: Y
+      value: Yanique
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[3].speaker
-      value: Y
+      value: Yanique
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[4].speaker
-      value: Y
+      value: Yanique
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[5].speaker
@@ -4086,11 +4086,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 205749786}
   m_SourcePrefab: {fileID: 100100000, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
 --- !u!4 &205749784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1054228749468761488, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 205749783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &205749785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7826230285183084330, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
+  m_PrefabInstance: {fileID: 205749783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &205749786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205749785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9e5cc476bbc5048bbcd5bebc63f593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speakable
+  dialogue:
+  - speaker: Yanique
+    text: Sorry, can't talk.
+  requiredFlags: []
+  blockedByFlags:
+  - FilledInForms
+  flagsToSet: []
+  autoTrigger: 0
+  interactionBubble: {fileID: 205749787}
+--- !u!1 &205749787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4384361371610260292, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
   m_PrefabInstance: {fileID: 205749783}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &208925764
@@ -34631,12 +34665,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
+  - speaker: 
+    text: '*Seth glares at you.*'
   - speaker: Seth
-    text: Fuck you Dawn, you can't go in here with a clearance card.
+    text: This some kinda joke?
   - speaker: Dawn
-    text: Tf is a clearance card you jerk
+    text: Just let me past, Seth.
   - speaker: Seth
-    text: Like I'd tell you, you Irregular scum
+    text: Even if I wanted to, you can't speak to the boss man without a Clearance
+      Card.
+  - speaker: Dawn
+    text: How do I get one of those?
+  - speaker: Seth
+    text: Figure it out, I'm busy.
   requiredFlags: []
   blockedByFlags:
   - NeedClearance
@@ -34679,7 +34720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Seth
-    text: You can't go in here without a clearance card.
+    text: I won't let you pass without a Clearance Card
   requiredFlags:
   - NeedClearance
   blockedByFlags:
@@ -34701,9 +34742,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Seth
-    text: You got a clearance card?!
+    text: Wait you actually got one?!
   - speaker: Seth
-    text: Well fuck you this is the end of the demo, so you're not getting in haha
+    text: Well, damn.
+  - speaker: Seth
+    text: 'Well, screw you. This is the end of the demo. '
+  - speaker: Seth
+    text: So suck an egg, bozo.
   requiredFlags:
   - GotClearance
   blockedByFlags: []
