@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 
 public class ClosetProgress : MonoBehaviour
 {
