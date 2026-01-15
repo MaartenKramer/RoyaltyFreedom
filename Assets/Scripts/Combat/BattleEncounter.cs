@@ -24,7 +24,7 @@ public class BattleEncounter : MonoBehaviour
 
         else if (other.CompareTag("Player") && enemyChoice == EnemyChoice.Harold)
         {
-            SceneFader.Instance.TransitionToScene("LeftHallCombat", "");
+            SceneFader.Instance.TransitionToScene("LunCombat3", "");
 
         }
     }
