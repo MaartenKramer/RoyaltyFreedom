@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90658f3a980d3d48a2ad9582276b497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  scene: IntroductionCutscene
 --- !u!4 &200034262
 Transform:
   m_ObjectHideFlags: 0

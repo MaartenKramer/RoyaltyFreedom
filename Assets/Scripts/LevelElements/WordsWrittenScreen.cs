@@ -61,7 +61,7 @@ public class WordsWrittenScreen : MonoBehaviour
 
     private void PickRandomGoal()
     {
-        index = Random.Range(0, goals.Count + 1);
+        index = Random.Range(0, goals.Count - 1);
         wordGoal = goals[index];
         slider.maxValue = wordGoal;
         goalText.SetText("Goal: " + wordGoal);
@@ -70,7 +70,7 @@ public class WordsWrittenScreen : MonoBehaviour
     private void PickNextGoal()
     {
         index++;
-        if (index > goals.Count-1)
+        if (index > goals.Count - 1)
         {
             index = 0;
             wordGoal = goals[index];

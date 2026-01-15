@@ -19150,6 +19150,9 @@ MonoBehaviour:
   typeAudioSource: {fileID: 481222844}
   typeSound: {fileID: 8300000, guid: 07b1cf1d13ca3e647a2fed77616dc7a9, type: 3}
   comboFound: {fileID: 868189304}
+  combatMusic: {fileID: 0}
+  combatWin: {fileID: 0}
+  combatLose: {fileID: 0}
   effectiveAnim: {fileID: 210757076}
   moveDistance: 2
   moveSpeed: 5
@@ -19540,7 +19543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843199953485924568, guid: 1303a810eb554984ab13509a3c0bf19c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
