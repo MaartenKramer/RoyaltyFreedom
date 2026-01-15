@@ -94,7 +94,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
-            if (currentCombo.Length == 5)
+            if (currentCombo.Length >= 5) // Changed to >= and moved to top
                 return;
 
             bool keyPressed = false;
@@ -143,11 +143,6 @@ public class BattleSystem : MonoBehaviour
             {
                 StartCoroutine(ComboExecute());
             }
-        }
-
-        if (currentCombo.Length > 5)
-        {
-            currentCombo = currentCombo.Substring(0, 5);
         }
     }
 
