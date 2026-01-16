@@ -94,7 +94,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERCOMBO)
         {
-            if (currentCombo.Length >= 5) // Changed to >= and moved to top
+            if (currentCombo.Length >= 5)
                 return;
 
             bool keyPressed = false;
@@ -143,6 +143,17 @@ public class BattleSystem : MonoBehaviour
             {
                 StartCoroutine(ComboExecute());
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            state = BattleState.WON;
+            StartCoroutine(EndBattle());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            state = BattleState.LOST;
+            StartCoroutine(EndBattle());
         }
     }
 
@@ -443,7 +454,7 @@ public class BattleSystem : MonoBehaviour
                     effectiveAnim.Play("Effective");
                 }
 
-                finalDamage = Mathf.RoundToInt(baseDamage * 1.25f);
+                finalDamage = Mathf.RoundToInt(baseDamage * 1.3f);
                 effectiveMarker = "very effective!";
             }
             else if (enemyUnit.resistantType == successfulCombo.damageType)
@@ -461,7 +472,7 @@ public class BattleSystem : MonoBehaviour
                     effectiveAnim.Play("Ineffective");
                 }
 
-                finalDamage = Mathf.RoundToInt(baseDamage * 0.75f);
+                finalDamage = Mathf.RoundToInt(baseDamage * 0.7f);
                 effectiveMarker = "not very effective.";
             }
             else

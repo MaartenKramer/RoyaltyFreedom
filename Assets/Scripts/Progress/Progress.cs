@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 public class Progress : MonoBehaviour
 {
     public static Progress Instance;
@@ -18,5 +19,22 @@ public class Progress : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.KeypadPeriod))
+        {
+            SceneFader.Instance.TransitionToScene(SceneManager.GetActiveScene().name, "");
+        }
+
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            SceneFader.Instance.TransitionToScene("LeftHall", "");
+            Instance.flags.Add("BenIntro");
+            Instance.flags.Add("PrinterDies");
+            Instance.flags.Add("PrinterDead");
+        }
     }
 }
