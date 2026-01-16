@@ -2145,8 +2145,8 @@ MonoBehaviour:
   specialAttack: 5
   defense: 4
   specialDefense: 2
-  maxHP: 300
-  currentHP: 300
+  maxHP: 250
+  currentHP: 250
   weaknessType: 4
   resistantType: 4
   attacks:
