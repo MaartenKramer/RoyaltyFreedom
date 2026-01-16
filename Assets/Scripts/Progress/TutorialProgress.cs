@@ -10,8 +10,8 @@ public class TutorialProgress : MonoBehaviour
     {
         if (Progress.Instance.flags.Contains("NeedClearance") && !Progress.Instance.flags.Contains("FindX") && !Progress.Instance.flags.Contains("GotForms"))
         {
-            questTitle.SetText("Get a clearance card");
-            questText.SetText("- Ask around to see if someone knows how to get a clearance card.");
+            questTitle.SetText("Get a Clearance Card");
+            questText.SetText("- Ask around to see if someone knows how to get a Clearance Card.");
         }
 
         if (Progress.Instance.flags.Contains("FindX") && !Progress.Instance.flags.Contains("GotForms"))
@@ -29,7 +29,7 @@ public class TutorialProgress : MonoBehaviour
         if (Progress.Instance.flags.Contains("FilledInForms") && !Progress.Instance.flags.Contains("DeliverForms"))
         {
             questTitle.SetText("Give the forms to Yanique");
-            questText.SetText("- Find Yanique in the caferteria.");
+            questText.SetText("- Find Yanique in the cafeteria.");
         }
 
         if (Progress.Instance.flags.Contains("DeliverForms") && !Progress.Instance.flags.Contains("GotClearance"))
@@ -50,7 +50,7 @@ public class TutorialProgress : MonoBehaviour
         if (Progress.Instance.flags.Contains("FilledInForms") && !Progress.Instance.flags.Contains("DeliverForms"))
         {
             questTitle.SetText("Give the forms to Yanique");
-            questText.SetText("- Find Yanique in the caferteria.");
+            questText.SetText("- Find Yanique in the cafeteria.");
         }
     }
 }
