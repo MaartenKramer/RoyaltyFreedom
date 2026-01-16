@@ -4923,7 +4923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find Mr Roberts
+  m_text: Find Mr. Roberts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -5659,8 +5659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 256.8, y: -50}
-  m_SizeDelta: {x: 478.5, y: 65.3}
+  m_AnchoredPosition: {x: 556.4, y: -50}
+  m_SizeDelta: {x: 1077.8, y: 65.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791032500
 MonoBehaviour:
@@ -8397,8 +8397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.4, y: 72.88}
-  m_SizeDelta: {x: 1810.1, y: 145.8}
+  m_AnchoredPosition: {x: -85.8, y: 72.88}
+  m_SizeDelta: {x: 1633.6, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1209749306
 Animator:
@@ -8442,7 +8442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -11289,7 +11289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.9999695, y: -11.649998}
+  m_AnchoredPosition: {x: 6, y: -11.649998}
   m_SizeDelta: {x: -12.000033, y: 23.300005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1749719659

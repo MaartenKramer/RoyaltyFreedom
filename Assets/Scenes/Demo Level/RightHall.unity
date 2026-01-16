@@ -1031,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.4, y: 72.88}
-  m_SizeDelta: {x: 1810.1, y: 145.8}
+  m_AnchoredPosition: {x: -121.7, y: 72.88}
+  m_SizeDelta: {x: 1562, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &163529124
 Animator:
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -1717,8 +1717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 256.8, y: -50}
-  m_SizeDelta: {x: 478.5, y: 65.3}
+  m_AnchoredPosition: {x: 532.8, y: -50}
+  m_SizeDelta: {x: 1030.4, y: 65.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368809915
 MonoBehaviour:
@@ -2635,11 +2635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[3].text
-      value: Jeez. calm down, Steve. Its just Marketing.
+      value: Jeez. Calm down, Steve. It's just Marketing.
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: dialogue.Array.data[4].text
-      value: HOW ON EARTH DO WE APPEAL TO A FOCUS GROUP THAT INCLUDES THE ENTIRE
+      value: HOW ON EARTH DO WE APPEAL TO A FOCUS GROUP THAT ENCOMPASSES THE ENTIRE
         POPULATION?!
       objectReference: {fileID: 0}
     - target: {fileID: 560904170249993290, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
@@ -2752,11 +2752,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a443d8302408e7347bc9e9acb7fe0ceb, type: 3}
     - target: {fileID: 2650103764511085414, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.91
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 2650103764511085414, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.1
+      value: 5.37
       objectReference: {fileID: 0}
     - target: {fileID: 4384361371610260292, guid: ec30c6a6fb0bdaf43b6f13f5237500c3, type: 3}
       propertyPath: m_IsActive
@@ -7365,7 +7365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find Mr Roberts
+  m_text: Find Mr. Roberts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}

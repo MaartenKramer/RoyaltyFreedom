@@ -4187,8 +4187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 256.8, y: -50}
-  m_SizeDelta: {x: 478.5, y: 65.3}
+  m_AnchoredPosition: {x: 505, y: -50}
+  m_SizeDelta: {x: 975, y: 65.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706043494
 MonoBehaviour:
@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find Mr Roberts
+  m_text: Find Mr. Roberts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -7361,7 +7361,7 @@ MonoBehaviour:
   - speaker: Hulda
     text: Erm... Excuse me? I'm kinda in the middle of something.
   - speaker: Dawn
-    text: middle of what?
+    text: Middle of what?
   - speaker: Hulda
     text: Waiting, duh!
   requiredFlags: []
@@ -8779,8 +8779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.4, y: 72.88}
-  m_SizeDelta: {x: 1810.1, y: 145.8}
+  m_AnchoredPosition: {x: -86.5, y: 72.88}
+  m_SizeDelta: {x: 1632.2, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1496700613
 Animator:
@@ -8824,7 +8824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}

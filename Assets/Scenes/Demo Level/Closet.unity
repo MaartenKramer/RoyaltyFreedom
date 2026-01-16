@@ -690,8 +690,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 256.8, y: -50}
-  m_SizeDelta: {x: 478.5, y: 65.3}
+  m_AnchoredPosition: {x: 591.9, y: -50}
+  m_SizeDelta: {x: 1148.7, y: 65.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154554456
 MonoBehaviour:
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   - speaker: Janitor Ben
     text: Welp. With your appearance it seems quite obvious to me.
   - speaker: Janitor Ben
-    text: You just changed from a Stock to an Irregular.
+    text: You just changed from a Stock into an Irregular.
   - speaker: Dawn
     text: An... Irregular?!
   - speaker: Dawn
@@ -1357,12 +1357,14 @@ MonoBehaviour:
   - speaker: Janitor Ben
     text: Relax, kid. You're not in trouble.
   - speaker: Janitor Ben
-    text: I just mean to say you got that indiviualistic spirit.
+    text: I just mean to say you got that individualistic spirit.
   - speaker: Janitor Ben
     text: And it seems like your desire for change made you begin to become your
       old Irregular self again.
+  - speaker: Janitor Ben
+    text: Thanks, I guess.
   - speaker: Dawn
-    text: So uhh what happens now?
+    text: So uhh... what happens now?
   - speaker: Janitor Ben
     text: Well now you can go try and fix things around here!
   - speaker: Dawn
@@ -1383,7 +1385,7 @@ MonoBehaviour:
   - speaker: Janitor Ben
     text: Ha! Now there is that fire I was looking for!
   - speaker: Janitor Ben
-    text: Guess you should start looking for your boss, Roberts.
+    text: Guess you should start by looking for your boss, Roberts.
   - speaker: Janitor Ben
     text: He may just be a Floor Manager, but he probably has the credentials needed.
   - speaker: Janitor Ben
@@ -1461,7 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Speakable
   dialogue:
   - speaker: Janitor Ben
-    text: A clearance card, eh?
+    text: A Clearance Card, eh?
   - speaker: Janitor Ben
     text: I think you need to fill out one of those paper forms for that.
   - speaker: Janitor Ben
@@ -4311,8 +4313,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.4, y: 72.88}
-  m_SizeDelta: {x: 1810.1, y: 145.8}
+  m_AnchoredPosition: {x: -86, y: 72.88}
+  m_SizeDelta: {x: 1633.4, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1184988694
 Animator:
@@ -4356,7 +4358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -4492,7 +4494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find Mr Roberts
+  m_text: Find Mr. Roberts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -4605,7 +4607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.9999695, y: -11.649998}
+  m_AnchoredPosition: {x: 6, y: -11.649998}
   m_SizeDelta: {x: -12.000033, y: 23.300005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251184470

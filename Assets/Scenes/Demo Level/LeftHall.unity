@@ -2701,7 +2701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494962196750026928, guid: af656296c0841fc41804e242e6256cb7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2749,13 +2749,13 @@ MonoBehaviour:
   - speaker: Harold
     text: Okay... Let's call it a tie.
   - speaker: Dawn
-    text: A tie? I kicked your pencil pushing ass!
+    text: A tie? I kicked your pencil-pushing ass!
   - speaker: Harold
     text: I only let you win, because I am an empath.
   - speaker: Dawn
     text: Whatever, Harold.
   - speaker: Dawn
-    text: Look I'm sorry if you end up having to do my work.
+    text: Look, I'm sorry if you end up having to do my work.
   - speaker: Dawn
     text: But I just can't do this anymore.
   - speaker: Harold
@@ -2769,7 +2769,7 @@ MonoBehaviour:
   - speaker: Harold
     text: I'll just sit here and uhh...
   - speaker: Harold
-    text: Catch my breath.
+    text: ...Catch my breath.
   requiredFlags: []
   blockedByFlags:
   - HaroldDialogue2
@@ -2816,15 +2816,15 @@ MonoBehaviour:
   - speaker: Harold
     text: Ow... What do you need, Roose?
   - speaker: Dawn
-    text: I need a form to go get past Seth.
+    text: I need a form to get past Seth.
   - speaker: Harold
-    text: Oh you can get a form from Hulda. She should be at the conference rooms.
+    text: Oh! You can get a form from Hulda. They should be at the conference rooms.
   - speaker: Dawn
     text: Alright, thanks!
   - speaker: Harold
     text: ...Where is that again?
   - speaker: Harold
-    text: Just take one of the doors at the north of the Hub.
+    text: Just take one of the doors at the north of The Hub.
   requiredFlags:
   - NeedClearance
   blockedByFlags:
@@ -4774,8 +4774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.4, y: 72.88}
-  m_SizeDelta: {x: 1810.1, y: 145.8}
+  m_AnchoredPosition: {x: -85.6, y: 72.88}
+  m_SizeDelta: {x: 1634.2, y: 145.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1154467288
 Animator:
@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -7384,7 +7384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find Mr Roberts
+  m_text: Find Mr. Roberts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
   m_sharedMaterial: {fileID: -8689719819812908500, guid: 0edf524b92775b048b0a98c09a42d0a1, type: 2}
@@ -9048,7 +9048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494962196750026928, guid: af656296c0841fc41804e242e6256cb7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9174,8 +9174,7 @@ MonoBehaviour:
   - speaker: Dawn
     text: Aww thanks. I like how you trimmed your beard.
   - speaker: Harold
-    text: Oh really? I use this brand of- Hey don't try and worm your way out of
-      this!
+    text: Oh really? I use this brand of- Hey! Don't try to change the subject!
   - speaker: Harold
     text: I'm not going to slave away doing both your work AND mine!
   requiredFlags: []
