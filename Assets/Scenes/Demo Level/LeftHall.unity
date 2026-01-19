@@ -2821,7 +2821,7 @@ MonoBehaviour:
     text: Oh! You can get a form from Hulda. They should be at the conference rooms.
   - speaker: Dawn
     text: Alright, thanks!
-  - speaker: Harold
+  - speaker: Dawn
     text: ...Where is that again?
   - speaker: Harold
     text: Just take one of the doors at the north of The Hub.
